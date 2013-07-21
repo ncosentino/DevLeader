@@ -1,5 +1,5 @@
 *.suo
-*/bin/*
-*/obj/*
+event-handler-example/bin/*
+event-handler-example/obj/*
 thread-pattern-example/thread-pattern-example/obj/*
 thread-pattern-example/thread-pattern-example/bin/*
