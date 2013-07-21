@@ -1,3 +1,5 @@
 *.suo
 */bin/*
 */obj/*
+thread-pattern-example/thread-pattern-example/obj/*
+thread-pattern-example/thread-pattern-example/bin/*
