@@ -3,3 +3,5 @@ event-handler-example/bin/*
 event-handler-example/obj/*
 thread-pattern-example/thread-pattern-example/obj/*
 thread-pattern-example/thread-pattern-example/bin/*
+datalayer-interfaces-example/*/bin/*
+datalayer-interfaces-example/*/obj/*
