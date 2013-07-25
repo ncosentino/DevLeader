@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ioc-singleton-example", "ioc-singleton-example\ioc-singleton-example.csproj", "{2E5547E8-AD34-4AF0-B367-FCE8AD8DA2BC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApplicationLayer", "ApplicationLayer\ApplicationLayer.csproj", "{429A689A-020C-4A51-94EA-F156AB04C8AF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2E5547E8-AD34-4AF0-B367-FCE8AD8DA2BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E5547E8-AD34-4AF0-B367-FCE8AD8DA2BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E5547E8-AD34-4AF0-B367-FCE8AD8DA2BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E5547E8-AD34-4AF0-B367-FCE8AD8DA2BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{429A689A-020C-4A51-94EA-F156AB04C8AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{429A689A-020C-4A51-94EA-F156AB04C8AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{429A689A-020C-4A51-94EA-F156AB04C8AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{429A689A-020C-4A51-94EA-F156AB04C8AF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

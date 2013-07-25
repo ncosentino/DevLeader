@@ -5,3 +5,5 @@ thread-pattern-example/thread-pattern-example/obj/*
 thread-pattern-example/thread-pattern-example/bin/*
 datalayer-interfaces-example/*/bin/*
 datalayer-interfaces-example/*/obj/*
+ioc-singleton-example/*/bin/*
+ioc-singleton-example/*/obj/*
