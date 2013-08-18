@@ -7,3 +7,5 @@ datalayer-interfaces-example/*/bin/*
 datalayer-interfaces-example/*/obj/*
 ioc-singleton-example/*/bin/*
 ioc-singleton-example/*/obj/*
+EventHandlerLeak/EventHandlerLeak/bin/*
+EventHandlerLeak/EventHandlerLeak/obj/*
