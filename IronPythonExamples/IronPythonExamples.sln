@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrintToConsole", "PrintToConsole\PrintToConsole.csproj", "{39C8D421-87F6-40D5-B775-94B1B5AE18BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RunExternalScript", "RunExternalScript\RunExternalScript.csproj", "{CC0F5F9F-7DCC-4CC9-8690-6CDA75C79318}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamicScript", "DynamicScript\DynamicScript.csproj", "{108C782A-6877-4C69-88F0-38712890514E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{39C8D421-87F6-40D5-B775-94B1B5AE18BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39C8D421-87F6-40D5-B775-94B1B5AE18BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39C8D421-87F6-40D5-B775-94B1B5AE18BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39C8D421-87F6-40D5-B775-94B1B5AE18BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC0F5F9F-7DCC-4CC9-8690-6CDA75C79318}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC0F5F9F-7DCC-4CC9-8690-6CDA75C79318}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC0F5F9F-7DCC-4CC9-8690-6CDA75C79318}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC0F5F9F-7DCC-4CC9-8690-6CDA75C79318}.Release|Any CPU.Build.0 = Release|Any CPU
+		{108C782A-6877-4C69-88F0-38712890514E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{108C782A-6877-4C69-88F0-38712890514E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{108C782A-6877-4C69-88F0-38712890514E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{108C782A-6877-4C69-88F0-38712890514E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

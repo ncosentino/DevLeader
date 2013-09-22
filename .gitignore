@@ -9,3 +9,9 @@ ioc-singleton-example/*/bin/*
 ioc-singleton-example/*/obj/*
 EventHandlerLeak/EventHandlerLeak/bin/*
 EventHandlerLeak/EventHandlerLeak/obj/*
+*/DynamicScript/bin/*
+*/DynamicScript/obj/*
+*/PrintToConsole/bin/*
+*/PrintToConsole/obj/*
+*/RunExternalScript/bin/*
+*/RunExternalScript/obj/*
