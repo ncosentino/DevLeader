@@ -15,3 +15,5 @@ EventHandlerLeak/EventHandlerLeak/obj/*
 */PrintToConsole/obj/*
 */RunExternalScript/bin/*
 */RunExternalScript/obj/*
+*/singleton-examples/bin/*
+*/singleton-examples/obj/*
