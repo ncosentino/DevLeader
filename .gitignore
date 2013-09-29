@@ -17,3 +17,5 @@ EventHandlerLeak/EventHandlerLeak/obj/*
 */RunExternalScript/obj/*
 */singleton-examples/bin/*
 */singleton-examples/obj/*
+*/DynamicClass/bin/*
+*/DynamicClass/obj/*
