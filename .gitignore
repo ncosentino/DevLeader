@@ -19,3 +19,5 @@ EventHandlerLeak/EventHandlerLeak/obj/*
 */singleton-examples/obj/*
 */DynamicClass/bin/*
 */DynamicClass/obj/*
+Tab Fragment Tutorial/bin/*
+Tab Fragment Tutorial/gen/*
