@@ -21,3 +21,5 @@ EventHandlerLeak/EventHandlerLeak/obj/*
 */DynamicClass/obj/*
 Tab Fragment Tutorial/bin/*
 Tab Fragment Tutorial/gen/*
+LambdaRefactor/*/bin/*
+LambdaRefactor/*/obj/*
