@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamicScript", "DynamicScr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamicClass", "DynamicClass\DynamicClass.csproj", "{EFE4737E-FE52-45CE-9353-E6B28CDE352B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleForm", "SampleForm\SampleForm.csproj", "{5F06D3CF-586C-4E79-BCCD-842FBA045BD2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,10 @@ Global
 		{EFE4737E-FE52-45CE-9353-E6B28CDE352B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EFE4737E-FE52-45CE-9353-E6B28CDE352B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EFE4737E-FE52-45CE-9353-E6B28CDE352B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F06D3CF-586C-4E79-BCCD-842FBA045BD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F06D3CF-586C-4E79-BCCD-842FBA045BD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F06D3CF-586C-4E79-BCCD-842FBA045BD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F06D3CF-586C-4E79-BCCD-842FBA045BD2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

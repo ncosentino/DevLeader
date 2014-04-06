@@ -23,3 +23,5 @@ Tab Fragment Tutorial/bin/*
 Tab Fragment Tutorial/gen/*
 LambdaRefactor/*/bin/*
 LambdaRefactor/*/obj/*
+*/SampleForm/bin/*
+*/SampleForm/obj/*
