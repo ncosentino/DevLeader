@@ -29,7 +29,7 @@ If you're interested in the topics you see here, you can find much more from my 
   [6]: https://www.twitch.tv/devleaderca
   [7]: https://twitter.com/DevLeaderCa
   [8]: https://www.facebook.com/DevLeaderCa
-  [9]: https://www.tiktok.com/@DevLeader
+  [9]: https://www.tiktok.com/@devleader
   [10]: https://www.youtube.com/@dudewheresmycode
   [11]: https://github.com/ncosentino/
   [12]: https://stackoverflow.com/users/2704424
