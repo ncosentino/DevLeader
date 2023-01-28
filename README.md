@@ -6,7 +6,7 @@ I started blogging at [https://www.devleader.ca][3] in order to share my experie
 At the time of writing, I am a principal software engineering manager at Microsoft. My day-to-day work requires a lot less hands-on coding, but I still actively program in my spare time.
 
 # What is this repo?
-Projects referred to by my blog, [Dev Leader][3].
+Projects referred to by my blog, [Dev Leader][3]. 
 
 # More info
 If you're interested in the topics you see here, you can find much more from my social media platforms below:
