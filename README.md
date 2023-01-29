@@ -11,6 +11,7 @@ Projects referred to by my blog, [Dev Leader][3].
 # More info
 If you're interested in the topics you see here, you can find much more from my social media platforms below:
 
+ - [All of my links][13]
  - [Blog - Dev Leader][3]
  - [LinkedIn - Nick Cosentino][4]
  - [YouTube - Dev Leader][5]
@@ -21,6 +22,7 @@ If you're interested in the topics you see here, you can find much more from my 
  - [YouTube - "Dude, Where's My Code?" Podcast][10]
  - [GitHub][11]
  - [Stack Overflow][12]
+ - [Mastodon][14]
 
   [2]: http://uwaterloo.ca
   [3]: https://www.devleader.ca
@@ -33,3 +35,5 @@ If you're interested in the topics you see here, you can find much more from my 
   [10]: https://www.youtube.com/@dudewheresmycode
   [11]: https://github.com/ncosentino/
   [12]: https://stackoverflow.com/users/2704424
+  [13]: https://linktr.ee/devleader
+  [14]: https://hachyderm.io/@devleader
