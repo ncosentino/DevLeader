@@ -1,6 +1,10 @@
 ﻿using System;
 using System.Reflection;
 
+/// <Summary>
+/// This code is discussed on this blog post:
+/// https://www.devleader.ca/2023/01/29/simple-secrets-to-access-to-the-dotnet-record-type/
+/// </Summary>
 namespace RecordTypesInEarlierVersionsExample
 {
     internal class Program
