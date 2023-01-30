@@ -1,4 +1,8 @@
-﻿using System;
+﻿//
+// This code is for a blog post that can be found here:
+// https://www.devleader.ca/2023/02/01/everything-you-wanted-to-know-about-multiline-strings/
+//
+using System;
 
 // this is the most simple example, where we just assign some text between
 // double quotes to a string variable. this is our base case to compare against
