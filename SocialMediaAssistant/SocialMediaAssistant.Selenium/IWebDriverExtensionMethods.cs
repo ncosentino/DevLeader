@@ -26,5 +26,39 @@ namespace OpenQA.Selenium
                 foundIndex == -1 ? null : pageSource,
                 foundIndex);
         }
+
+        public static IWebElement? WaitForElementId(
+            this IWebDriver driver,
+            string elementId,
+            TimeSpan timeout)
+        {
+            var wait = new WebDriverWait(driver, timeout);
+
+            IWebElement? element = null;
+            var success = wait.Until(x =>
+            {
+                element = driver.FindElements(By.Id(elementId)).FirstOrDefault();
+                return element != null;
+            });
+
+            return element;
+        }
+
+        public static IWebElement? WaitForElementByXPath(
+            this IWebDriver driver,
+            string xpath,
+            TimeSpan timeout)
+        {
+            var wait = new WebDriverWait(driver, timeout);
+
+            IWebElement? element = null;
+            var success = wait.Until(x =>
+            {
+                element = driver.FindElements(By.XPath(xpath)).FirstOrDefault();
+                return element != null;
+            });
+
+            return element;
+        }
     }
 }
