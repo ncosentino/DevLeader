@@ -1,5 +1,7 @@
 ﻿// The code in this file is intended to accompany the video here:
 // https://youtu.be/RR7Cq0iwNYo
+// You can also follow along in the corresponding blog post here:    
+// https://www.devleader.ca/2023/02/05/ienumerable-in-c-a-simplified-beginners-guide/
 
 // IEnumerables are a basic interface that allow us to iterate (i.e. ask for
 // one element at a time) from a collection or data source. All collection
