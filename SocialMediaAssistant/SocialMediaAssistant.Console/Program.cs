@@ -12,6 +12,14 @@ static async Task GetTikTokFollowersAsync()
     Console.WriteLine(profileInfo);
 }
 
+static async Task GetInstagramFollowersAsync()
+{
+    var InstagramProfileFetcher = new InstagramSeleniumProfileFetcher();
+    var profileInfo = InstagramProfileFetcher.FetchAsync("dev.leader");
+    Console.WriteLine(profileInfo);
+}
+
+
 static void SaveTweetScreenshots()
 {
     var webDriverFactory = new ChromeWebdriverFactory();
