@@ -13,11 +13,8 @@ using SocialMediaAssistant.Selenium;
 public sealed class InstagramSeleniumProfileFetcher
 {
     //Regex - Regular expression, define syntax that matches patterns in strings
-    private static readonly Regex _followingCountRegex = new Regex(
-        "<span class=\"_ac2a _ac2b\"><span>(.*?)</span></span> following",
-        RegexOptions.IgnoreCase | RegexOptions.Compiled);
-    private static readonly Regex _followerCountRegex = new Regex(
-        "<span class=\"_ac2a _ac2b\" title=\"(.*?)\"><span>(.*?)</span></span> followers",
+    private static readonly Regex _metaContextRegex = new Regex(
+        "(\\d+) Followers, (\\d+) Following, (\\d+) Posts",
         RegexOptions.IgnoreCase | RegexOptions.Compiled);
 
     private readonly ChromeWebdriverFactory _chromeWebdriverFactory;
@@ -40,24 +37,21 @@ public sealed class InstagramSeleniumProfileFetcher
         using IWebDriver webDriver = _chromeWebdriverFactory.Create();
         webDriver.Url = profileUrl;
 
-        var followingCountResult = webDriver.WaitForPageSourceContains(
-            "<div class=\"_aacl _aaco _aacu _aacy _aad6 _aadb _aade\">",
+        var metaDataResult = webDriver.WaitForPageSourceContains(
+            "<meta content=",
             TimeSpan.FromSeconds(15));
 
         // take text from page, go to location identified, collect X characters from there
-        var followingCountMatch = _followingCountRegex.Match(
-            followingCountResult.PageSource,
-            followingCountResult.Index.Value,
+        var metaContentMatch = _metaContextRegex.Match(
+            metaDataResult.PageSource,
+            metaDataResult.Index.Value,
             200);
-        var followerCountMatch = _followerCountRegex.Match(
-            followingCountResult.PageSource, 
-            followingCountResult.Index.Value, 
-            300);
 
         // type conversion (parse) from type String to type Integer; InvariantCulture builds resiliency
-        var following = int.Parse(followingCountMatch.Groups[1].Value, CultureInfo.InvariantCulture);
-        var followers = int.Parse(followerCountMatch.Groups[1].Value, CultureInfo.InvariantCulture);
-
+        var followers = int.Parse(metaContentMatch.Groups[1].Value, CultureInfo.InvariantCulture);
+        var following = int.Parse(metaContentMatch.Groups[2].Value, CultureInfo.InvariantCulture);
+        //var posts = int.Parse(match.Groups[3].Value, CultureInfo.InvariantCulture);
+            
         var profileInfo = new ProfileInfo(
             profileName,
             profileUrl,
