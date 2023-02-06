@@ -3,7 +3,7 @@ This example is a very basic introduction to enumerables in C# with a correspond
 [What the HECK are iterators in .NET C#](https://www.youtube.com/watch?v=fU5-QeSLG2I)
 
 You can also follow along in the corresponding blog post here:    
-[TBD](https://www.devleader.ca)
+[TBD](https://www.devleader.ca/2023/02/10/iterators-an-elementary-perspective-on-how-they-function/)
 
 # Follow Up
 If you found this useful, please consider checking out my other content here:    
