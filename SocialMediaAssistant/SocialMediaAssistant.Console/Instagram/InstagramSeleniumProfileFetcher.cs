@@ -1,7 +1,7 @@
 ﻿// <strong title="Followers" data-e2e="followers-count">139</strong> -- tiktok html reference
 // <span class=\"_ac2a _ac2b\" title=\".+?\"><span>(.+?)</span></span> -- instagram followers
 // <span class="_ac2a _ac2b"><span>12</span></span> -- instagram following
-// https://www.tiktok.com/@devleader
+// https://www.instagram.com/dev.leader
 
 using System.Globalization;
 using System.Text.RegularExpressions;
