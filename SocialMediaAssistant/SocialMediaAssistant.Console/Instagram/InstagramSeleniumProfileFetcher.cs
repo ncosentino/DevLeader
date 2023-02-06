@@ -38,8 +38,8 @@ public sealed class InstagramSeleniumProfileFetcher
         webDriver.Url = profileUrl;
 
         var metaDataResult = webDriver.WaitForPageSourceContains(
-            TimeSpan.FromSeconds(15));
             $"href=\"https://www.instagram.com/{profileName}/\"><meta content=\"",
+            TimeSpan.FromSeconds(30));
 
         // take text from page, go to location identified, collect X characters from there
         var metaContentMatch = _metaContextRegex.Match(
