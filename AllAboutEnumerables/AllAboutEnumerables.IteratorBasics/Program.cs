@@ -1,5 +1,7 @@
 ﻿// The code in this file is intended to accompany the video here:
 // https://youtu.be/fU5-QeSLG2I
+// You can also follow along with the blog post here:
+// https://www.devleader.ca/2023/02/10/iterators-an-elementary-perspective-on-how-they-function/
 
 int[] dataset = new int[] { 1, 2, 3, 4, 5 };
 
