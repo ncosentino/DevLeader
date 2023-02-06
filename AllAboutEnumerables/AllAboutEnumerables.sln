@@ -5,9 +5,11 @@ VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AllAboutEnumerables.Introduction", "AllAboutEnumerables.Introduction\AllAboutEnumerables.Introduction.csproj", "{369DDA89-9E56-4EB8-AD01-2BABBF067066}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AllAboutEnumerables.IteratorBasics", "AllAboutEnumerables.IteratorBasics\AllAboutEnumerables.IteratorBasics.csproj", "{394E8C7A-4BFB-4CE3-8067-9883377DCCCD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AllAboutEnumerables.IteratorBasics", "AllAboutEnumerables.IteratorBasics\AllAboutEnumerables.IteratorBasics.csproj", "{394E8C7A-4BFB-4CE3-8067-9883377DCCCD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AllAboutEnumerables.IteratorAndCollectionPitfalls", "AllAboutEnumerables.IteratorAndCollectionPitfalls\AllAboutEnumerables.IteratorAndCollectionPitfalls.csproj", "{D06346CE-35F5-4942-8259-66655035FFF6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AllAboutEnumerables.IteratorAndCollectionPitfalls", "AllAboutEnumerables.IteratorAndCollectionPitfalls\AllAboutEnumerables.IteratorAndCollectionPitfalls.csproj", "{D06346CE-35F5-4942-8259-66655035FFF6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AllAboutEnumerables.BasicIteratorBenchmarks", "AllAboutEnumerables.BasicIteratorBenchmarks\AllAboutEnumerables.BasicIteratorBenchmarks.csproj", "{E0381DC7-49EB-4040-80B0-8EB39840D607}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{D06346CE-35F5-4942-8259-66655035FFF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D06346CE-35F5-4942-8259-66655035FFF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D06346CE-35F5-4942-8259-66655035FFF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0381DC7-49EB-4040-80B0-8EB39840D607}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0381DC7-49EB-4040-80B0-8EB39840D607}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0381DC7-49EB-4040-80B0-8EB39840D607}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0381DC7-49EB-4040-80B0-8EB39840D607}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
