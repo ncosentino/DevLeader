@@ -16,6 +16,7 @@ public sealed class TweetScreenshotter
     }
 
     public IEnumerable<TweetScreenshot> CreateFromTweetIds(
+        string twitterUserId,
         IEnumerable<string> tweetIds,
         Vector3 backgroundRgb)
     {
@@ -25,6 +26,7 @@ public sealed class TweetScreenshotter
         var tweetScreenshots = tweetIds
             .Select(x => CreateTweetScreenshot(
                 webDriver,
+                twitterUserId,
                 x))
             .ToArray();
         try
@@ -88,9 +90,10 @@ public sealed class TweetScreenshotter
 
     private TweetScreenshot CreateTweetScreenshot(
         IWebDriver webDriver,
+        string twitterUserId,
         string tweetId)
     {
-        webDriver.Url = $"https://publish.twitter.com/?hideConversation=on&query=https%3A%2F%2Ftwitter.com%2FDevLeaderCa%2Fstatus%2F{tweetId}&theme=dark&widget=Tweet";
+        webDriver.Url = $"https://publish.twitter.com/?hideConversation=on&query=https%3A%2F%2Ftwitter.com%2F{twitterUserId}%2Fstatus%2F{tweetId}&theme=dark&widget=Tweet";
 
         // no idea why just waiting forthis embedded text isn't good enough....
         //_webDriver.WaitForPageSourceContains(

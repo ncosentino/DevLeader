@@ -27,6 +27,7 @@ static void SaveTweetScreenshots()
     var screenshotter = new TweetScreenshotter(webDriverFactory);
 
     foreach (var screenshot in screenshotter.CreateFromTweetIds(
+        "DevLeaderCA",
         new string[]
         {
         "1619544614079467520",
