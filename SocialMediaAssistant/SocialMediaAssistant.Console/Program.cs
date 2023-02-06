@@ -4,6 +4,7 @@ using SocialMediaAssistant.Selenium;
 // EXAMPLES
 //await GetTikTokFollowersAsync();
 //SaveTweetScreenshots();
+//await GetInstagramFollowersAsync();
 
 static async Task GetTikTokFollowersAsync()
 {
