@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "SocialMediaAssistant.Console": {
+      "commandName": "Project",
+      "commandLineArgs": "--TUMBLR_CONSUMER_KEY=\"kq8r08LiQWFstn7OMuZjtBr9gavKukPZAtrHuMtSmaxNvBuTBw\" --TUMBLR_SECRET_KEY=\"XXzqw8XJWR2v5DbxyfEd4PxCYqllonNV3QyAHmBE5ac7G8BzSQ\" --TUMBLR_OAUTH_TOKEN=\"GnXZuC5HJr9IpENjwndjBQEDOkaro9eyh93lPxTZVhb9nrC8zm\" --TUMBLR_OAUTH_SECRET=\"tRhvvVuTs6PLFNQkVXqLfIbMvNHQaU7u6CnGhnFph1TdOsVLeN\"",
+      "environmentVariables": {
+      }
+    }
+  }
+}

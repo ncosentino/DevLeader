@@ -8,6 +8,7 @@ using System.Text.RegularExpressions;
 
 using OpenQA.Selenium;
 
+using SocialMediaAssistant.Console;
 using SocialMediaAssistant.Selenium;
 
 public sealed class InstagramSeleniumProfileFetcher
