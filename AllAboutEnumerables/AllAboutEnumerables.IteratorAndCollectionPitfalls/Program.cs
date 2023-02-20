@@ -1,5 +1,5 @@
 ﻿// The code in this file is intended to accompany the video here:
-// https://youtu.be/3a_hg8KE-aQ
+// https://www.youtube.com/watch?v=0s_VMhZSOwQ
 
 // From my professional experience, I have seen BOTH IEnumerables/Iterators as
 // well as using full collections without iterators cause nightmarish problems
