@@ -1,0 +1,46 @@
+﻿@page "/fetchdata"
+@using BlazorPluginsExample.PluginApi;
+@inject PluginProvider PluginProvider
+
+<PageTitle>Plugins</PageTitle>
+
+<h1>Execute The Plugins!</h1>
+
+<p>This component demonstrates calling plugin code.</p>
+
+@if (plugins == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <p><em>There are @plugins.Count plugins.</em></p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Plugin Output</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var plugin in plugins)
+            {
+                <tr>
+                    <!--Maybe async was a bad choice for this example!-->
+                    <td>
+                        @plugin.GetDataAsync().GetAwaiter().GetResult()
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private IReadOnlyList<IPluginApi>? plugins;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await Task.Yield();
+        plugins = PluginProvider.GetPlugins();
+    }
+}
