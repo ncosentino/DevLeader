@@ -1,17 +1,18 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
-    <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="8.0.0" />
+    <PackageReference Include="Autofac" Version="7.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="7.0.11" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\BlazorPluginsExample.HtmlFragmentExamplePlugin.PluginApi\BlazorPluginsExample.HtmlFragmentExamplePlugin.PluginApi.csproj" />
     <ProjectReference Include="..\BlazorPluginsExample.NavigationPluginApi\BlazorPluginsExample.NavigationPluginApi.csproj" />
     <ProjectReference Include="..\BlazorPluginsExample.PluginApi\BlazorPluginsExample.PluginApi.csproj" />
   </ItemGroup>

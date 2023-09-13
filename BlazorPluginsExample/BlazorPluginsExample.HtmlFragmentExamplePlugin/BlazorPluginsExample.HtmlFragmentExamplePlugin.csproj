@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BlazorPluginsExample.PluginApi\BlazorPluginsExample.PluginApi.csproj" />
+    <ProjectReference Include="..\BlazorPluginsExample.HtmlFragmentExamplePlugin.PluginApi\BlazorPluginsExample.HtmlFragmentExamplePlugin.PluginApi.csproj" />
   </ItemGroup>
 
 </Project>

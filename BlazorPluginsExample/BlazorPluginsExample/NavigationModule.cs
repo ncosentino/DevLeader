@@ -2,22 +2,17 @@
 
 using Autofac;
 
-using BlazorPluginsExample.PluginApi;
+using BlazorPluginsExample.NavigationPluginApi;
+using BlazorPluginsExample.PluginApi.Shared;
 
 namespace BlazorPluginsExample;
 
-public sealed class AutofacModule : global::Autofac.Module
+public sealed class NavigationModule : global::Autofac.Module
 {
     protected override void Load(ContainerBuilder builder)
     {
         builder
-            .RegisterType<PluginProvider>()
-            .SingleInstance();
-        builder
-            .RegisterType<GenericPluginProvider<IPluginApi2>>()
-            .SingleInstance();
-        builder
-            .RegisterType<GenericPluginProvider<IPluginApi3>>()
+            .RegisterType<GenericPluginProvider<INavigationPlugin>>()
             .SingleInstance();
 
         foreach (var file in Directory.EnumerateFiles(
@@ -29,7 +24,7 @@ public sealed class AutofacModule : global::Autofac.Module
             builder
                 .RegisterAssemblyTypes(assembly)
                 .Where(t => 
-                    typeof(IPluginApi3).IsAssignableFrom(t)
+                    typeof(INavigationPlugin).IsAssignableFrom(t)
                     && !t.IsAbstract
                     && t.IsClass)
                 .AsImplementedInterfaces()

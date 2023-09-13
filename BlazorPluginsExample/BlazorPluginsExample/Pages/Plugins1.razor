@@ -1,6 +1,7 @@
 ﻿@page "/plugins1"
 @using BlazorPluginsExample.PluginApi;
-@inject PluginProvider PluginProvider
+@using BlazorPluginsExample.PluginApi.Shared;
+@inject GenericPluginProvider<IPluginApi> PluginProvider
 
 <PageTitle>Plugins</PageTitle>
 

@@ -5,13 +5,25 @@ VisualStudioVersion = 17.6.33927.249
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorPluginsExample", "BlazorPluginsExample\BlazorPluginsExample.csproj", "{E75CA40E-D56D-47E0-BD98-30A48C390815}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorPluginsExample.PluginApi", "BlazorPlugisExample.PluginApi\BlazorPluginsExample.PluginApi.csproj", "{EBF412DF-645B-4397-958F-0ED59BC1FD4F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorPluginsExample.PluginApi", "BlazorPluginsExample.PluginApi\BlazorPluginsExample.PluginApi.csproj", "{EBF412DF-645B-4397-958F-0ED59BC1FD4F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorPluginsExample.PluginALibrary", "BlazorPluginsExample.PluginALibrary\BlazorPluginsExample.PluginALibrary.csproj", "{A8A8144F-8309-4DB1-9F36-9206B3615369}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorPluginsExample.HtmlFragmentPluginLibrary", "BlazorPluginsExample.HtmlFragmentPluginLibrary\BlazorPluginsExample.HtmlFragmentPluginLibrary.csproj", "{247E2C59-22B9-47E5-9FF3-D6E9D00F4FF3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorPluginsExample.HtmlFragmentPluginLibrary", "BlazorPluginsExample.HtmlFragmentPluginLibrary\BlazorPluginsExample.HtmlFragmentPluginLibrary.csproj", "{247E2C59-22B9-47E5-9FF3-D6E9D00F4FF3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorPluginsExample.RenderFragmentPluginLibrary", "BlazorPluginsExample.RenderFragmentPluginLibrary\BlazorPluginsExample.RenderFragmentPluginLibrary.csproj", "{80ED51E2-EA40-411B-9151-F04830A2DE58}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorPluginsExample.RenderFragmentPluginLibrary", "BlazorPluginsExample.RenderFragmentPluginLibrary\BlazorPluginsExample.RenderFragmentPluginLibrary.csproj", "{80ED51E2-EA40-411B-9151-F04830A2DE58}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorPluginsExample.NavigationPluginApi", "BlazorPluginsExample.NavigationPluginApi\BlazorPluginsExample.NavigationPluginApi.csproj", "{3857E560-BE34-41C8-98F7-7DEB86A86853}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Features", "Features", "{5D3C3768-CE92-4AAF-B63C-DCC44A80FC2B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorPluginsExample.HtmlFragmentExamplePlugin", "BlazorPluginsExample.HtmlFragmentExamplePlugin\BlazorPluginsExample.HtmlFragmentExamplePlugin.csproj", "{8EEEF3A6-F468-4C07-AFD8-B5F9ACD8AFC3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HtmlFragments", "HtmlFragments", "{1B39B0AB-B8E7-41E9-8211-7F696920F7F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorPluginsExample.HtmlFragmentExamplePlugin.PluginApi", "BlazorPluginsExample.HtmlFragmentExamplePlugin.PluginApi\BlazorPluginsExample.HtmlFragmentExamplePlugin.PluginApi.csproj", "{BC971D2A-AE8A-4483-8BA2-AF2DF309809A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorPluginsExample.HtmlFragmentPluginFeature", "BlazorPluginsExample.HtmlFragmentPluginFeature\BlazorPluginsExample.HtmlFragmentPluginFeature.csproj", "{3E24F109-58DD-451B-9774-5868B3B984F8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,9 +51,31 @@ Global
 		{80ED51E2-EA40-411B-9151-F04830A2DE58}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{80ED51E2-EA40-411B-9151-F04830A2DE58}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{80ED51E2-EA40-411B-9151-F04830A2DE58}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3857E560-BE34-41C8-98F7-7DEB86A86853}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3857E560-BE34-41C8-98F7-7DEB86A86853}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3857E560-BE34-41C8-98F7-7DEB86A86853}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3857E560-BE34-41C8-98F7-7DEB86A86853}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EEEF3A6-F468-4C07-AFD8-B5F9ACD8AFC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EEEF3A6-F468-4C07-AFD8-B5F9ACD8AFC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EEEF3A6-F468-4C07-AFD8-B5F9ACD8AFC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EEEF3A6-F468-4C07-AFD8-B5F9ACD8AFC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC971D2A-AE8A-4483-8BA2-AF2DF309809A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC971D2A-AE8A-4483-8BA2-AF2DF309809A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC971D2A-AE8A-4483-8BA2-AF2DF309809A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC971D2A-AE8A-4483-8BA2-AF2DF309809A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E24F109-58DD-451B-9774-5868B3B984F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E24F109-58DD-451B-9774-5868B3B984F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E24F109-58DD-451B-9774-5868B3B984F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E24F109-58DD-451B-9774-5868B3B984F8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8EEEF3A6-F468-4C07-AFD8-B5F9ACD8AFC3} = {1B39B0AB-B8E7-41E9-8211-7F696920F7F5}
+		{1B39B0AB-B8E7-41E9-8211-7F696920F7F5} = {5D3C3768-CE92-4AAF-B63C-DCC44A80FC2B}
+		{BC971D2A-AE8A-4483-8BA2-AF2DF309809A} = {1B39B0AB-B8E7-41E9-8211-7F696920F7F5}
+		{3E24F109-58DD-451B-9774-5868B3B984F8} = {1B39B0AB-B8E7-41E9-8211-7F696920F7F5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8BEC357F-661B-4B66-A910-B7A532805732}

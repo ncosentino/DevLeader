@@ -1,4 +1,11 @@
-﻿<Router AppAssembly="@typeof(App).Assembly">
+﻿@using System.Reflection;
+@using BlazorPluginsExample.NavigationPluginApi;
+@using BlazorPluginsExample.PluginApi.Shared;
+@inject GenericPluginProvider<INavigationPlugin> NavigationPluginProvider;
+
+<Router 
+    AppAssembly="@typeof(App).Assembly"
+    AdditionalAssemblies="@AdditionalAssemblies">
     <Found Context="routeData">
         <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
         <FocusOnNavigate RouteData="@routeData" Selector="h1" />
@@ -10,3 +17,15 @@
         </LayoutView>
     </NotFound>
 </Router>
+
+@code
+{
+    private IReadOnlyList<Assembly> AdditionalAssemblies =>
+        NavigationPluginProvider
+            .GetPlugins()
+            .Select(p =>
+            {
+                return p.GetType().Assembly;
+            })
+            .ToList();
+}

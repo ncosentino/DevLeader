@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BlazorPlugisExample.PluginApi\BlazorPluginsExample.PluginApi.csproj" />
+    <ProjectReference Include="..\BlazorPluginsExample.PluginApi\BlazorPluginsExample.PluginApi.csproj" />
   </ItemGroup>
 
 </Project>

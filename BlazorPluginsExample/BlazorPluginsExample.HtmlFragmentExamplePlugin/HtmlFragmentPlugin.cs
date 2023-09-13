@@ -1,8 +1,9 @@
-﻿using BlazorPluginsExample.PluginApi;
+﻿using BlazorPluginsExample.HtmlFragmentExamplePlugin.PluginApi;
 
 namespace BlazorPluginsExample.HtmlFragmentPluginLibrary;
 
-public sealed class HtmlFragmentPlugin : IPluginApi2
+public sealed class HtmlFragmentPlugin :
+    IHtmlFragmentPlugin
 {
     public Task<string> GetFragmentContentAsync() =>
         Task.FromResult(

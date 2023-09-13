@@ -6,8 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\BlazorPluginsExample.PluginApi\BlazorPluginsExample.PluginApi.csproj" />
-  </ItemGroup>
-
 </Project>

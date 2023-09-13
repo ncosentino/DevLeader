@@ -1,4 +1,8 @@
-﻿<div class="top-row ps-3 navbar navbar-dark">
+﻿@using BlazorPluginsExample.NavigationPluginApi;
+@using BlazorPluginsExample.PluginApi.Shared;
+@inject GenericPluginProvider<INavigationPlugin> PluginProvider
+
+<div class="top-row ps-3 navbar navbar-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="">BlazorPluginsExample</a>
         <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
@@ -15,29 +19,50 @@
             </NavLink>
         </div>
 
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="plugins1">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Plugins 1
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="plugins2">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Plugins 2
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="plugins3">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Plugins 3
-            </NavLink>
-        </div>
-
+        @if (_navigationItems == null)
+        {
+            <p><em>Loading...</em></p>
+        }
+        else if (_navigationItems.Count < 1)
+        {
+            <p><em>
+            No plugins! Try building the plugin projects and
+            dropping the DLLs into the bin directory!
+            </em></p>
+        }
+        else
+        {
+            @foreach (var navigationItem in _navigationItems)
+            {
+                <div class="nav-item px-3">
+                    <NavLink class="nav-link" href=@navigationItem.Link>
+                        <span class="oi oi-list-rich" aria-hidden="true" />
+                        @navigationItem.Title
+                    </NavLink>
+                </div>
+            }
+        }
     </nav>
 </div>
 
 @code {
     private bool collapseNavMenu = true;
-
     private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+    private IReadOnlyList<NavigationItem>? _navigationItems;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var plugins = PluginProvider.GetPlugins();
+
+        List<NavigationItem> navigationItems = new(plugins.Count);
+        foreach (var plugin in plugins)
+        {
+            var itemsFromPlugin = await plugin.GetNavigationItemsAsync();
+            navigationItems.AddRange(itemsFromPlugin);
+        }
+
+        _navigationItems = navigationItems;
+    }
 
     private void ToggleNavMenu()
     {
