@@ -1,0 +1,53 @@
+﻿@page "/plugins3"
+@using BlazorPluginsExample.PluginApi;
+@inject GenericPluginProvider<IPluginApi3> PluginProvider
+
+<PageTitle>Plugins 3</PageTitle>
+
+<h1>Plugins That Load RenderFragments!</h1>
+
+<p>Let's dynamically populate the UI!</p>
+
+@if (_fragments == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <p><em>There are @_fragments.Count plugins.</em></p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Plugin Output</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var fragment in _fragments)
+            {
+                <tr>
+                    <td>
+                        @fragment
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private IReadOnlyList<RenderFragment>? _fragments;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var plugins = PluginProvider.GetPlugins();
+
+        List<RenderFragment> fragments = new(plugins.Count);
+        foreach (var plugin in plugins)
+        {
+            var fragment = await plugin.GetRenderFragmentAsync();
+            fragments.Add(fragment);
+        }
+
+        _fragments = fragments;
+    }
+}

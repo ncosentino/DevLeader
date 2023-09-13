@@ -1,0 +1,58 @@
+﻿@page "/plugins2"
+@using BlazorPluginsExample.PluginApi;
+@inject GenericPluginProvider<IPluginApi2> PluginProvider
+
+<PageTitle>Plugins</PageTitle>
+
+<h1>Execute The Plugins!</h1>
+
+<p>This component demonstrates calling plugin code.</p>
+
+@if (_fragments == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <p><em>There are @_fragments.Count plugins.</em></p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Plugin Output</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var fragment in _fragments)
+            {
+                <tr>
+                    <td>
+                        @fragment
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private IReadOnlyList<RenderFragment>? _fragments;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var plugins = PluginProvider.GetPlugins();
+
+        List<RenderFragment> fragments = new(plugins.Count);
+        foreach (var plugin in plugins)
+        {
+            var content = await plugin.GetFragmentContentAsync();
+            fragments.Add(new(builder =>
+            {
+                builder.OpenElement(1, "p");
+                builder.AddContent(2, new MarkupString(content));
+                builder.CloseElement();
+            }));
+        }
+
+        _fragments = fragments;
+    }
+}
