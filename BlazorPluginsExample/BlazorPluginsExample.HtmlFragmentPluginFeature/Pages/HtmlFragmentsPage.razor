@@ -1,7 +1,8 @@
 ﻿@page "/htmlfragmentspage"
+@using BlazorPluginsExample.HtmlFragmentPluginLibrary;
 @using BlazorPluginsExample.PluginApi.Shared;
 @using BlazorPluginsExample.HtmlFragmentExamplePlugin.PluginApi;
-@inject GenericPluginProvider<IHtmlFragmentPlugin> PluginProvider
+@inject LateLoadPluginProvider<IHtmlFragmentPlugin> PluginProvider
 
 <PageTitle>Plugins</PageTitle>
 

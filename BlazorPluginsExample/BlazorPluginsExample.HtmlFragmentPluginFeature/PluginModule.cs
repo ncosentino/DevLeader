@@ -12,5 +12,8 @@ public sealed class PluginModule : Module
         builder
             .RegisterType<GenericPluginProvider<IHtmlFragmentPlugin>>()
             .SingleInstance();
+        builder
+            .RegisterType<LateLoadPluginProvider<IHtmlFragmentPlugin>>()
+            .SingleInstance();
     }
 }
