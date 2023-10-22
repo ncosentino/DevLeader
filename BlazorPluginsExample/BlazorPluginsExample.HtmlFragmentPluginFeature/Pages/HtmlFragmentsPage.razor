@@ -2,7 +2,10 @@
 @using BlazorPluginsExample.HtmlFragmentPluginLibrary;
 @using BlazorPluginsExample.PluginApi.Shared;
 @using BlazorPluginsExample.HtmlFragmentExamplePlugin.PluginApi;
-@inject LateLoadPluginProvider<IHtmlFragmentPlugin> PluginProvider
+@using Microsoft.AspNetCore.Components.Web.Virtualization;
+@using System.ComponentModel;
+@inject PluginListModel<IHtmlFragmentPlugin> PluginProvider
+@implements IDisposable
 
 <PageTitle>Plugins</PageTitle>
 
@@ -17,6 +20,7 @@
 else
 {
     <p><em>There are @_fragments.Count plugins.</em></p>
+    
     <table class="table">
         <thead>
             <tr>
@@ -24,6 +28,7 @@ else
             </tr>
         </thead>
         <tbody>
+            
             @foreach (var fragment in _fragments)
             {
                 <tr>
@@ -39,9 +44,20 @@ else
 @code {
     private IReadOnlyList<RenderFragment>? _fragments;
 
+    public void Dispose()
+    {
+        PluginProvider.PropertyChanged -= PluginProvider_PropertyChanged;
+    }
+
     protected override async Task OnInitializedAsync()
     {
-        var plugins = PluginProvider.GetPlugins();
+        await RefreshPluginsAsync().ConfigureAwait(false);
+        PluginProvider.PropertyChanged += PluginProvider_PropertyChanged;
+    }
+
+    private async Task RefreshPluginsAsync()
+    {
+        var plugins = PluginProvider.Plugins;
 
         List<RenderFragment> fragments = new(plugins.Count);
         foreach (var plugin in plugins)
@@ -57,4 +73,26 @@ else
 
         _fragments = fragments;
     }
+
+    private async void PluginProvider_PropertyChanged(
+        object? sender, 
+        PropertyChangedEventArgs e)
+    {
+        try
+        {
+            if (e.PropertyName == nameof(PluginProvider.Plugins))
+            {
+                // we need to run UI changes on the UI thread!
+                await InvokeAsync(async () =>
+                {
+                    await RefreshPluginsAsync().ConfigureAwait(false);
+                    StateHasChanged();
+                }).ConfigureAwait(false);
+            }
+        }
+        catch
+        {
+            // FIXME: async void! dun dun dunnnnnnn
+        }
+    }    
 }

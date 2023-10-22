@@ -24,6 +24,8 @@ public sealed class LateLoadPluginProvider<TPluginApi>
         watcher.Created += Watcher_Created;
     }
 
+    public event EventHandler<EventArgs>? PluginsChanged;
+
     public IReadOnlyList<TPluginApi> GetPlugins()
     {
         var combinedPlugins = _genericPluginProvider
@@ -57,5 +59,7 @@ public sealed class LateLoadPluginProvider<TPluginApi>
         var scope = container.BeginLifetimeScope();
         var plugins = scope.Resolve<IEnumerable<TPluginApi>>();
         _plugins.AddRange(plugins);
+
+        PluginsChanged?.Invoke(this, EventArgs.Empty);
     }
 }
