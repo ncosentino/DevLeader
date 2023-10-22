@@ -1,0 +1,25 @@
+﻿@page "/counter"
+
+<PageTitle>Counter</PageTitle>
+
+<h1>Counter</h1>
+
+<p role="status">Current count: @currentCount</p>
+
+<button 
+    class="btn btn-primary" 
+    @onclick="IncrementCount">
+    Click me
+</button>
+
+@code {
+    // FIXME: make it work with bUnit
+    [Parameter]
+    public int currentCount { get; set; }
+    //private int currentCount;
+
+    private void IncrementCount()
+    {
+        currentCount++;
+    }
+}

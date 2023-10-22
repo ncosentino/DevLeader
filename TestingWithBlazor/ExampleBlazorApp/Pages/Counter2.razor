@@ -1,0 +1,20 @@
+﻿@page "/counter2"
+@inject ICounterViewModel CounterViewModel
+
+<PageTitle>Counter 2</PageTitle>
+
+<h1>Counter 2</h1>
+
+<p 
+    role="status">
+    Current count: @CounterViewModel.CurrentCount
+</p>
+
+<button
+    class="btn btn-primary"
+    @onclick=@CounterViewModel.IncrementCount>
+    Click me
+</button>
+
+@code {
+}
