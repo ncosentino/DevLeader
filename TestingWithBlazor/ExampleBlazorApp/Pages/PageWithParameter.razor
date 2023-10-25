@@ -1,0 +1,12 @@
+﻿@page "/pagewithparam/{TheParameter}"
+
+<PageTitle>Page With Parameter</PageTitle>
+
+<h1>Page With Parameter</h1>
+
+<p role="status">The parameter: @TheParameter</p>
+
+@code {
+    [Parameter]
+    public int TheParameter { get; set; }
+}

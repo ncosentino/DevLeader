@@ -2,6 +2,8 @@
 
 using ExampleBlazorApp.Pages;
 
+using Microsoft.AspNetCore.Components;
+
 using Xunit;
 
 namespace ExampleBlazorApp.Tests;
@@ -37,5 +39,15 @@ public class CounterPageTests : TestContext
         renderedComponent
             .Find("p")
             .MarkupMatches("<p role=\"status\">Current count: 5</p>");
+    }
+
+    [Fact]
+    public void PageAttribute_SingleAsExpected()
+    {
+        var pageAttributes = typeof(Counter).GetCustomAttributes(true);
+        var pageRouteAttribute = (RouteAttribute)Assert.Single(
+            pageAttributes,
+            x => x is RouteAttribute routeAttribute);
+        Assert.Equal("/counter", pageRouteAttribute.Template);
     }
 }
