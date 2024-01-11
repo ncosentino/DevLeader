@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AllAboutEnumerables.Iterato
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AllAboutEnumerables.IteratorAndCollectionPitfalls", "AllAboutEnumerables.IteratorAndCollectionPitfalls\AllAboutEnumerables.IteratorAndCollectionPitfalls.csproj", "{D06346CE-35F5-4942-8259-66655035FFF6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AllAboutEnumerables.BasicIteratorBenchmarks", "AllAboutEnumerables.BasicIteratorBenchmarks\AllAboutEnumerables.BasicIteratorBenchmarks.csproj", "{E0381DC7-49EB-4040-80B0-8EB39840D607}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AllAboutEnumerables.BasicIteratorBenchmarks", "AllAboutEnumerables.BasicIteratorBenchmarks\AllAboutEnumerables.BasicIteratorBenchmarks.csproj", "{E0381DC7-49EB-4040-80B0-8EB39840D607}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AllAboutEnumerables.PagingVariationBenchmarks", "AllAboutEnumerables.PagingVariationBenchmarks\AllAboutEnumerables.PagingVariationBenchmarks.csproj", "{76390E94-1C0C-466D-92FD-F59613D256B8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{E0381DC7-49EB-4040-80B0-8EB39840D607}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E0381DC7-49EB-4040-80B0-8EB39840D607}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E0381DC7-49EB-4040-80B0-8EB39840D607}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76390E94-1C0C-466D-92FD-F59613D256B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76390E94-1C0C-466D-92FD-F59613D256B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76390E94-1C0C-466D-92FD-F59613D256B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76390E94-1C0C-466D-92FD-F59613D256B8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

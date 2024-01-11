@@ -3,6 +3,8 @@ using BenchmarkDotNet.Configs;
 using BenchmarkDotNet.Jobs;
 using BenchmarkDotNet.Running;
 
+using System.Collections.Generic;
+
 var config = ManualConfig
     .Create(DefaultConfig.Instance)
     .WithOptions(ConfigOptions.DisableOptimizationsValidator);
@@ -25,20 +27,23 @@ public class Benchmarks
     {
         Iterator,
         PopulateAsList,
+        PopulateAsROList,
         PopulateAsROCollection
     }
 
     private int[] _dataset;
 
-    [Params(
-        1_000,
-        100_000,
-        10_000_000)]
+    //[Params(
+    //    1_000,
+    //    100_000,
+    //    10_000_000)]
+    [Params(100_000)]
     public int NumberOfEntriesInDataset;
 
     [Params(
         ImplementationScenario.Iterator,
         ImplementationScenario.PopulateAsList, 
+        ImplementationScenario.PopulateAsROList,
         ImplementationScenario.PopulateAsROCollection)]
     public ImplementationScenario Implementation;
 
@@ -55,6 +60,17 @@ public class Benchmarks
     }
 
     private IReadOnlyCollection<int> GetResultsUsingListAsReadOnlyCollection()
+    {
+        var results = new List<int>();
+        foreach (var item in _dataset)
+        {
+            results.Add(item);
+        }
+
+        return results;
+    }
+
+    private IReadOnlyList<int> GetResultsUsingListAsReadOnlyList()
     {
         var results = new List<int>();
         foreach (var item in _dataset)
@@ -91,6 +107,7 @@ public class Benchmarks
         {
             ImplementationScenario.Iterator => GetResultsUsingIterator().Any(),
             ImplementationScenario.PopulateAsList => GetResultsUsingListAsList().Any(),
+            ImplementationScenario.PopulateAsROList => GetResultsUsingListAsReadOnlyList().Any(),
             ImplementationScenario.PopulateAsROCollection => GetResultsUsingListAsReadOnlyCollection().Any(),
             _ => throw new NotImplementedException(Implementation.ToString()),
         };
@@ -103,6 +120,7 @@ public class Benchmarks
         {
             ImplementationScenario.Iterator => GetResultsUsingIterator().Count(),
             ImplementationScenario.PopulateAsList => GetResultsUsingListAsList().Count(),
+            ImplementationScenario.PopulateAsROList => GetResultsUsingListAsReadOnlyList().Count(),
             ImplementationScenario.PopulateAsROCollection => GetResultsUsingListAsReadOnlyCollection().Count(),
             _ => throw new NotImplementedException(Implementation.ToString()),
         };
@@ -115,6 +133,7 @@ public class Benchmarks
         {
             ImplementationScenario.Iterator => GetResultsUsingIterator().ToArray(),
             ImplementationScenario.PopulateAsList => GetResultsUsingListAsList().ToArray(),
+            ImplementationScenario.PopulateAsROList => GetResultsUsingListAsReadOnlyList().ToArray(),
             ImplementationScenario.PopulateAsROCollection => GetResultsUsingListAsReadOnlyCollection().ToArray(),
             _ => throw new NotImplementedException(Implementation.ToString()),
         };
@@ -127,6 +146,7 @@ public class Benchmarks
         {
             ImplementationScenario.Iterator => GetResultsUsingIterator().Take(_dataset.Length / 2).ToArray(),
             ImplementationScenario.PopulateAsList => GetResultsUsingListAsList().Take(_dataset.Length / 2).ToArray(),
+            ImplementationScenario.PopulateAsROList => GetResultsUsingListAsReadOnlyList().Take(_dataset.Length / 2).ToArray(),
             ImplementationScenario.PopulateAsROCollection => GetResultsUsingListAsReadOnlyCollection().Take(_dataset.Length / 2).ToArray(),
             _ => throw new NotImplementedException(Implementation.ToString()),
         };
