@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="BenchmarkDotNet" Version="0.13.5" />
+    <ProjectReference Include="..\Benchmarking.BenchmarkDotNet.BenchmarkBaseClass\Benchmarking.BenchmarkDotNet.BenchmarkBaseClass.csproj" />
   </ItemGroup>
 
 </Project>
