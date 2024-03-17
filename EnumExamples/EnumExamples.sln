@@ -5,7 +5,9 @@ VisualStudioVersion = 17.6.33927.249
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EnumExamples", "EnumExamples\EnumExamples.csproj", "{3357182A-9E1F-476A-826C-C567564604D2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhatElseIfNotEnums", "WhatElseIfNotEnums\WhatElseIfNotEnums.csproj", "{21B4EC2D-9F43-4304-874D-59969B7EB935}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WhatElseIfNotEnums", "WhatElseIfNotEnums\WhatElseIfNotEnums.csproj", "{21B4EC2D-9F43-4304-874D-59969B7EB935}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestsToEnsureNoChange", "TestsToEnsureNoChange\TestsToEnsureNoChange.csproj", "{675EBE95-6E87-4550-A087-E7B4F55A101B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{21B4EC2D-9F43-4304-874D-59969B7EB935}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{21B4EC2D-9F43-4304-874D-59969B7EB935}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{21B4EC2D-9F43-4304-874D-59969B7EB935}.Release|Any CPU.Build.0 = Release|Any CPU
+		{675EBE95-6E87-4550-A087-E7B4F55A101B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{675EBE95-6E87-4550-A087-E7B4F55A101B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{675EBE95-6E87-4550-A087-E7B4F55A101B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{675EBE95-6E87-4550-A087-E7B4F55A101B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
