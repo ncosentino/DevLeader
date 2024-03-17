@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PipelineExamples", "PipelineExamples\PipelineExamples.csproj", "{2366EA4B-D8CD-445A-B733-3A93C31216D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutofacPipelineConfiguration", "AutofacPipelineConfiguration\AutofacPipelineConfiguration.csproj", "{1C3D5934-E7C6-430A-8534-6579EDBAAD75}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2366EA4B-D8CD-445A-B733-3A93C31216D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2366EA4B-D8CD-445A-B733-3A93C31216D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2366EA4B-D8CD-445A-B733-3A93C31216D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2366EA4B-D8CD-445A-B733-3A93C31216D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C3D5934-E7C6-430A-8534-6579EDBAAD75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C3D5934-E7C6-430A-8534-6579EDBAAD75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C3D5934-E7C6-430A-8534-6579EDBAAD75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C3D5934-E7C6-430A-8534-6579EDBAAD75}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EB988ABC-A9F2-41E9-8C9E-62827749E9BF}
+	EndGlobalSection
+EndGlobal
