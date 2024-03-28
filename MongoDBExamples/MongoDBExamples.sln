@@ -3,7 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MongoDBExamples.InsertRecords", "MongoDBExamples.InsertRecords\MongoDBExamples.InsertRecords.csproj", "{CFC96D8C-A73F-4F16-A3E6-732F460E8B0C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MongoDBExamples.InsertRecords", "MongoDBExamples.InsertRecords\MongoDBExamples.InsertRecords.csproj", "{CFC96D8C-A73F-4F16-A3E6-732F460E8B0C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MongoDBExamples.DeleteRecords", "MongoDBExamples.DeleteRecords\MongoDBExamples.DeleteRecords.csproj", "{E6473102-DFB7-4109-AFB3-5F2FCB62D4F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MongoDBExamples.QueryRecords", "MongoDBExamples.QueryRecords\MongoDBExamples.QueryRecords.csproj", "{B50E0FA8-C93C-4ECC-AC62-E7F6F151CE4A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MongoDBExamples.UpdateRecords", "MongoDBExamples.UpdateRecords\MongoDBExamples.UpdateRecords.csproj", "{63EA5169-D7A6-48DF-B7A5-78D26B8C64C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MongoDBExamples.Benchmarks", "MongoDBExamples.Benchmarks\MongoDBExamples.Benchmarks.csproj", "{632B304C-D431-4198-A3B8-1426F8901F66}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +23,22 @@ Global
 		{CFC96D8C-A73F-4F16-A3E6-732F460E8B0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CFC96D8C-A73F-4F16-A3E6-732F460E8B0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CFC96D8C-A73F-4F16-A3E6-732F460E8B0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6473102-DFB7-4109-AFB3-5F2FCB62D4F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6473102-DFB7-4109-AFB3-5F2FCB62D4F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6473102-DFB7-4109-AFB3-5F2FCB62D4F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6473102-DFB7-4109-AFB3-5F2FCB62D4F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B50E0FA8-C93C-4ECC-AC62-E7F6F151CE4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B50E0FA8-C93C-4ECC-AC62-E7F6F151CE4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B50E0FA8-C93C-4ECC-AC62-E7F6F151CE4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B50E0FA8-C93C-4ECC-AC62-E7F6F151CE4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63EA5169-D7A6-48DF-B7A5-78D26B8C64C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63EA5169-D7A6-48DF-B7A5-78D26B8C64C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63EA5169-D7A6-48DF-B7A5-78D26B8C64C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63EA5169-D7A6-48DF-B7A5-78D26B8C64C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{632B304C-D431-4198-A3B8-1426F8901F66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{632B304C-D431-4198-A3B8-1426F8901F66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{632B304C-D431-4198-A3B8-1426F8901F66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{632B304C-D431-4198-A3B8-1426F8901F66}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
