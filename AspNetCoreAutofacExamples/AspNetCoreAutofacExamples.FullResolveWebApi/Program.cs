@@ -1,0 +1,1 @@
+await new FullResolveWebApi().RunAsync(CancellationToken.None);
