@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34902.65
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RefactoringWithRosario.ConsoleApp", "RefactoringWithRosario.ConsoleApp\RefactoringWithRosario.ConsoleApp.csproj", "{F4238037-7C17-4FCC-B819-DF6C757DC904}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RefactoringWithRosario.Tests", "RefactoringWithRosario.Tests\RefactoringWithRosario.Tests.csproj", "{9A0D0B5F-B54D-4B89-86C2-93B06145CA67}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F4238037-7C17-4FCC-B819-DF6C757DC904}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4238037-7C17-4FCC-B819-DF6C757DC904}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4238037-7C17-4FCC-B819-DF6C757DC904}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4238037-7C17-4FCC-B819-DF6C757DC904}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A0D0B5F-B54D-4B89-86C2-93B06145CA67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A0D0B5F-B54D-4B89-86C2-93B06145CA67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A0D0B5F-B54D-4B89-86C2-93B06145CA67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A0D0B5F-B54D-4B89-86C2-93B06145CA67}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6AC0AA3F-2A5D-4403-ABAB-2F1B33347530}
+	EndGlobalSection
+EndGlobal
