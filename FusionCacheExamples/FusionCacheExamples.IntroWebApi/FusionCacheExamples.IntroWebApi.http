@@ -1,0 +1,6 @@
+@FusionCacheExamples.IntroWebApi_HostAddress = http://localhost:5173
+
+GET {{FusionCacheExamples.IntroWebApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
