@@ -12,4 +12,8 @@
     <PackageReference Include="morelinq" Version="4.3.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MoreLinqExamples.ConsoleApp\MoreLinqExamples.ConsoleApp.csproj" />
+  </ItemGroup>
+
 </Project>
