@@ -1,0 +1,10 @@
+﻿INSERT INTO [WeatherForecast] ([Id], [DateTimeUtc], [TemperatureC]) VALUES (1, '2024-08-11 00:00:00Z', 20);
+INSERT INTO [WeatherForecast] ([Id], [DateTimeUtc], [TemperatureC]) VALUES (2, '2024-08-12 00:00:00Z', 21);
+INSERT INTO [WeatherForecast] ([Id], [DateTimeUtc], [TemperatureC]) VALUES (3, '2024-08-13 00:00:00Z', 19);
+INSERT INTO [WeatherForecast] ([Id], [DateTimeUtc], [TemperatureC]) VALUES (4, '2024-08-14 00:00:00Z', 20);
+INSERT INTO [WeatherForecast] ([Id], [DateTimeUtc], [TemperatureC]) VALUES (5, '2024-08-15 00:00:00Z', 18);
+INSERT INTO [WeatherForecast] ([Id], [DateTimeUtc], [TemperatureC]) VALUES (6, '2024-08-16 00:00:00Z', 23);
+INSERT INTO [WeatherForecast] ([Id], [DateTimeUtc], [TemperatureC]) VALUES (7, '2024-08-17 00:00:00Z', 24);
+INSERT INTO [WeatherForecast] ([Id], [DateTimeUtc], [TemperatureC]) VALUES (8, '2024-08-18 00:00:00Z', 17);
+INSERT INTO [WeatherForecast] ([Id], [DateTimeUtc], [TemperatureC]) VALUES (9, '2024-08-19 00:00:00Z', 16);
+INSERT INTO [WeatherForecast] ([Id], [DateTimeUtc], [TemperatureC]) VALUES (10, '2024-08-20 00:00:00Z', 15);
