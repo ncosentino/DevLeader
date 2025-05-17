@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AllAboutEnumerables.BasicIt
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AllAboutEnumerables.PagingVariationBenchmarks", "AllAboutEnumerables.PagingVariationBenchmarks\AllAboutEnumerables.PagingVariationBenchmarks.csproj", "{76390E94-1C0C-466D-92FD-F59613D256B8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AllAboutEnumerables.ExploringLinq", "AllAboutEnumerables.ExploringLinq\AllAboutEnumerables.ExploringLinq.csproj", "{740B4273-64FF-4B89-B827-41F3D924F7D7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AllAboutEnumerables.ExploringLinq", "AllAboutEnumerables.ExploringLinq\AllAboutEnumerables.ExploringLinq.csproj", "{740B4273-64FF-4B89-B827-41F3D924F7D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AllAboutEnumerables.YieldKeyword", "AllAboutEnumerables.YieldKeyword\AllAboutEnumerables.YieldKeyword.csproj", "{1CA6AE0B-785E-4DA8-867E-6590E9135AAE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{740B4273-64FF-4B89-B827-41F3D924F7D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{740B4273-64FF-4B89-B827-41F3D924F7D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{740B4273-64FF-4B89-B827-41F3D924F7D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CA6AE0B-785E-4DA8-867E-6590E9135AAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CA6AE0B-785E-4DA8-867E-6590E9135AAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CA6AE0B-785E-4DA8-867E-6590E9135AAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CA6AE0B-785E-4DA8-867E-6590E9135AAE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
