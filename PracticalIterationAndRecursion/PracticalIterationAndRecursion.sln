@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34902.65
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PracticalIterationAndRecursion.FileFolderExample", "PracticalIterationAndRecursion.FileFolderExample\PracticalIterationAndRecursion.FileFolderExample.csproj", "{82F83D93-7C84-4B87-9982-AE6D58DD4728}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{82F83D93-7C84-4B87-9982-AE6D58DD4728}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82F83D93-7C84-4B87-9982-AE6D58DD4728}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82F83D93-7C84-4B87-9982-AE6D58DD4728}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82F83D93-7C84-4B87-9982-AE6D58DD4728}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0D715C74-4423-46B9-9E26-D8A95DE3D6A8}
+	EndGlobalSection
+EndGlobal
