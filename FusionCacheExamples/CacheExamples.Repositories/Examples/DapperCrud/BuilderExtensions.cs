@@ -1,11 +1,12 @@
 ﻿using CacheExamples.Repositories.Common;
 using CacheExamples.Repositories.Examples;
-using CacheExamples.Repositories.Examples.EfCrudGeneric;
 
 using Microsoft.Data.Sqlite;
 using Microsoft.Extensions.Caching.Hybrid;
 
 using System.Data;
+
+using ZiggyCreatures.Caching.Fusion;
 
 public static class BuilderExtensionsDapperCrud
 {
@@ -23,6 +24,15 @@ public static class BuilderExtensionsDapperCrud
             new HybridCachingRepository<Entity>(
                 CreateDapperRepository(),
                 provider.GetRequiredService<HybridCache>()));
+    }
+
+    public static void SetupDapperCrudWithFusionCacheDecorator(
+        this WebApplicationBuilder builder)
+    {
+        builder.Services.AddSingleton<IRepository<Entity>, FusionCacheRepository<Entity>>(provider =>
+            new FusionCacheRepository<Entity>(
+                CreateDapperRepository(),
+                provider.GetRequiredService<IFusionCache>()));
     }
 
     private static DapperRepository CreateDapperRepository()

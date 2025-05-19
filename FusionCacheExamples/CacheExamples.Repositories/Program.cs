@@ -1,21 +1,24 @@
 using CacheExamples.Repositories.Common;
 
-using Microsoft.Extensions.Caching.Hybrid;
+using Microsoft.Extensions.Caching.StackExchangeRedis;
+
+using ZiggyCreatures.Caching.Fusion;
+using ZiggyCreatures.Caching.Fusion.Serialization.SystemTextJson;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.SetupDapperCrudWithHybridCacheDecorator();
-builder.Services.AddHybridCache(options =>
-{
-    options.DefaultEntryOptions = new HybridCacheEntryOptions
+builder.Services
+    .AddFusionCache()
+    .WithSerializer(new FusionCacheSystemTextJsonSerializer())
+    .WithDistributedCache(new RedisCache(new RedisCacheOptions
     {
-        Expiration = TimeSpan.FromSeconds(15),
-        LocalCacheExpiration = TimeSpan.FromSeconds(5)
-    };
-});
-builder.Services.AddStackExchangeRedisCache(options =>
-{
-    options.Configuration = builder.Configuration.GetConnectionString("RedisConnectionString");
-});
+        Configuration = builder.Configuration.GetConnectionString("RedisConnectionString")
+    })
+    ).WithDefaultEntryOptions(opts =>
+    {
+        opts.SetDurationInfinite();
+    })
+    .AsHybridCache();
 
 var app = builder.Build();
 app.UseHttpsRedirection();

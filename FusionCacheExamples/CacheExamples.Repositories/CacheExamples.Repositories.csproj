@@ -12,6 +12,9 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="9.0.1" />
     <PackageReference Include="Microsoft.Extensions.Caching.Hybrid" Version="9.4.0" />
     <PackageReference Include="Microsoft.Extensions.Caching.StackExchangeRedis" Version="10.0.0-preview.3.25172.1" />
+    <PackageReference Include="ZiggyCreatures.FusionCache" Version="2.2.0" />
+    <PackageReference Include="ZiggyCreatures.FusionCache.Backplane.StackExchangeRedis" Version="2.2.0" />
+    <PackageReference Include="ZiggyCreatures.FusionCache.Serialization.SystemTextJson" Version="2.2.0" />
   </ItemGroup>
 
 </Project>

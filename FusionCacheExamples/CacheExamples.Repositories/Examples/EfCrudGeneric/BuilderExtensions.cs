@@ -6,6 +6,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Hybrid;
 using Microsoft.Extensions.Caching.Memory;
 
+using ZiggyCreatures.Caching.Fusion;
+
 public static class BuilderExtensionsEfCrudGeneric
 {
     public static void SetupEfCrudGeneric(
@@ -42,6 +44,17 @@ public static class BuilderExtensionsEfCrudGeneric
             new HybridCachingRepository<Entity>(
                 provider.GetRequiredService<EfCoreRepository<Entity>>(),
                 provider.GetRequiredService<HybridCache>()));
+    }
+
+    public static void SetupEfCrudWithFusionCacheDecorator(
+        this WebApplicationBuilder builder)
+    {
+        builder.SetupEfCoreDataSource();
+        builder.Services.AddSingleton<EfCoreRepository<Entity>>();
+        builder.Services.AddSingleton<IRepository<Entity>, FusionCacheRepository<Entity>>(provider =>
+            new FusionCacheRepository<Entity>(
+                provider.GetRequiredService<EfCoreRepository<Entity>>(),
+                provider.GetRequiredService<IFusionCache>()));
     }
 
     private static void SetupEfCoreDataSource(
