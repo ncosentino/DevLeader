@@ -4,10 +4,21 @@
 
 using StackExchange.Redis;
 
-using ConnectionMultiplexer multiplexer = ConnectionMultiplexer.Connect("localhost:11337");
+using ConnectionMultiplexer multiplexer = ConnectionMultiplexer.Connect("localhost");
 IDatabase db = multiplexer.GetDatabase();
 
 //db.StringSet("mykey", "Dev Leader was here!");
-string? value = db.StringGet("mykey");
+//string? value = db.StringGet("mykey");
 
-Console.WriteLine(value);
+while (true)
+{
+    Console.WriteLine("Enter a key to get a value, or type 'exit' to quit:");
+    string? key = Console.ReadLine();
+    if (key == "exit")
+    {
+        break;
+    }
+
+    var value = await db.StringGetAsync(key);
+    Console.WriteLine($"Retrieved {key}: {value}");
+}
