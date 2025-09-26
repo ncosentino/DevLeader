@@ -7,7 +7,7 @@ This page is a curated landing hub for plugin- or modular-architecture resources
 ## 🎤 Slides & Presentations
 
 - **DotNet Plugin Architecture – CYC 2025 Talk**  
-  [Download the slides](./DotNet%20Plugin%20Architecture%20-%20CYC2025.pptx)  
+  [Download the slides](https://github.com/ncosentino/DevLeader/blob/master/CYC2025/DotNet%20Plugin%20Architecture%20-%20CYC2025.pptx)  
   Covers:
   - Kernel vs Feature Plugins  
   - Dependency Injection & Assembly Scanning  
