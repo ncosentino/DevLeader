@@ -1,0 +1,7 @@
+<Solution>
+  <Folder Name="/Solution Items/" />
+  <Project Path="VibeCodedAnalyzers.ConsoleApp.Tests/VibeCodedAnalyzers.ConsoleApp.Tests.csproj" />
+  <Project Path="VibeCodedAnalyzers.ConsoleApp/VibeCodedAnalyzers.ConsoleApp.csproj" />
+  <Project Path="VibeCodedAnalyzers.RangeActAssertAnalyzer.Tests/VibeCodedAnalyzers.RangeActAssertAnalyzer.Tests.csproj" />
+  <Project Path="VibeCodedAnalyzers.RangeActAssertAnalyzer/VibeCodedAnalyzers.RangeActAssertAnalyzer.csproj" />
+</Solution>
