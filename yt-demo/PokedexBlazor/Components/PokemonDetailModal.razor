@@ -1,0 +1,467 @@
+@using PokedexBlazor.Models
+@using PokedexBlazor.Services
+
+@if (IsOpen && Pokemon != null)
+{
+    <div class="modal-backdrop" @onclick="Close">
+        <div class="modal-content" @onclick:stopPropagation="true">
+            <button class="modal-close" @onclick="Close">×</button>
+            
+            <div class="modal-header">
+                <h2 class="pokemon-name">@Pokemon.Name</h2>
+                <span class="pokemon-number">#@Pokemon.Id.ToString("D3")</span>
+            </div>
+            
+            <div class="modal-body">
+                <div class="pokemon-image-section">
+                    @if (!string.IsNullOrEmpty(Pokemon.Details?.Sprites?.Other?.OfficialArtwork?.FrontDefault))
+                    {
+                        <img src="@Pokemon.Details.Sprites.Other.OfficialArtwork.FrontDefault" 
+                             alt="@Pokemon.Name" 
+                             class="pokemon-image" />
+                    }
+                    
+                    <div class="sprite-gallery">
+                        @if (!string.IsNullOrEmpty(Pokemon.Details?.Sprites?.FrontDefault))
+                        {
+                            <img src="@Pokemon.Details.Sprites.FrontDefault" alt="Front" class="sprite" />
+                        }
+                        @if (!string.IsNullOrEmpty(Pokemon.Details?.Sprites?.BackDefault))
+                        {
+                            <img src="@Pokemon.Details.Sprites.BackDefault" alt="Back" class="sprite" />
+                        }
+                        @if (!string.IsNullOrEmpty(Pokemon.Details?.Sprites?.FrontShiny))
+                        {
+                            <img src="@Pokemon.Details.Sprites.FrontShiny" alt="Shiny Front" class="sprite shiny" />
+                        }
+                        @if (!string.IsNullOrEmpty(Pokemon.Details?.Sprites?.BackShiny))
+                        {
+                            <img src="@Pokemon.Details.Sprites.BackShiny" alt="Shiny Back" class="sprite shiny" />
+                        }
+                    </div>
+                </div>
+                
+                <div class="pokemon-info-section">
+                    <div class="info-group">
+                        <h3>Types</h3>
+                        <div class="pokemon-types">
+                            @foreach (var type in (Pokemon.Details?.Types.OrderBy(t => t.Slot) ?? Enumerable.Empty<PokemonType>()))
+                            {
+                                <span class="type-badge type-@type.Type.Name.ToLower()">
+                                    @type.Type.Name
+                                </span>
+                            }
+                        </div>
+                    </div>
+                    
+                    <div class="info-group">
+                        <h3>Physical</h3>
+                        <div class="physical-stats">
+                            <div class="stat-item">
+                                <span class="stat-label">Height:</span>
+                                <span class="stat-value">@((Pokemon.Details?.Height ?? 0) / 10.0)m</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Weight:</span>
+                                <span class="stat-value">@((Pokemon.Details?.Weight ?? 0) / 10.0)kg</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="info-group">
+                        <h3>Base Stats</h3>
+                        <div class="stats-container">
+                            @foreach (var stat in Pokemon.Details?.Stats ?? new List<PokemonStat>())
+                            {
+                                <div class="stat-row">
+                                    <span class="stat-name">@FormatStatName(stat.Stat.Name)</span>
+                                    <div class="stat-bar-container">
+                                        <div class="stat-bar" style="width: @((stat.BaseStat / 255.0) * 100)%"></div>
+                                    </div>
+                                    <span class="stat-number">@stat.BaseStat</span>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                    
+                    <div class="info-group">
+                        <h3>Abilities</h3>
+                        <div class="abilities">
+                            @foreach (var ability in Pokemon.Details?.Abilities ?? new List<PokemonAbility>())
+                            {
+                                <span class="ability-badge @(ability.IsHidden ? "hidden" : "")">
+                                    @FormatAbilityName(ability.Ability.Name)
+                                    @if (ability.IsHidden)
+                                    {
+                                        <span class="hidden-label">(Hidden)</span>
+                                    }
+                                </span>
+                            }
+                        </div>
+                    </div>
+                    
+                    <div class="info-group">
+                        <h3>Tracking Status</h3>
+                        <div class="tracking-status">
+                            <div class="status-item">
+                                <span class="status-label">Seen:</span>
+                                <span class="status-value @(Pokemon.TrackingInfo.IsSeen ? "yes" : "no")">
+                                    @(Pokemon.TrackingInfo.IsSeen ? "Yes" : "No")
+                                    @if (Pokemon.TrackingInfo.SeenDate.HasValue)
+                                    {
+                                        <span class="date">(@Pokemon.TrackingInfo.SeenDate.Value.ToString("MMM dd, yyyy"))</span>
+                                    }
+                                </span>
+                            </div>
+                            <div class="status-item">
+                                <span class="status-label">Captured:</span>
+                                <span class="status-value @(Pokemon.TrackingInfo.IsCaptured ? "yes" : "no")">
+                                    @(Pokemon.TrackingInfo.IsCaptured ? "Yes" : "No")
+                                    @if (Pokemon.TrackingInfo.CapturedDate.HasValue)
+                                    {
+                                        <span class="date">(@Pokemon.TrackingInfo.CapturedDate.Value.ToString("MMM dd, yyyy"))</span>
+                                    }
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal-footer">
+                <button class="btn-primary" @onclick="() => OnToggleCaptured.InvokeAsync(Pokemon.Id)">
+                    @(Pokemon.TrackingInfo.IsCaptured ? "Release Pokemon" : "Capture Pokemon")
+                </button>
+            </div>
+        </div>
+    </div>
+}
+
+@code {
+    [Parameter] public bool IsOpen { get; set; }
+    [Parameter] public Pokemon? Pokemon { get; set; }
+    [Parameter] public EventCallback OnClose { get; set; }
+    [Parameter] public EventCallback<int> OnToggleCaptured { get; set; }
+    
+    private async Task Close()
+    {
+        await OnClose.InvokeAsync();
+    }
+    
+    private string FormatStatName(string statName)
+    {
+        return statName switch
+        {
+            "hp" => "HP",
+            "attack" => "Attack",
+            "defense" => "Defense",
+            "special-attack" => "Sp. Attack",
+            "special-defense" => "Sp. Defense",
+            "speed" => "Speed",
+            _ => statName
+        };
+    }
+    
+    private string FormatAbilityName(string abilityName)
+    {
+        return string.Join(" ", abilityName.Split('-').Select(w => 
+            char.ToUpper(w[0]) + w.Substring(1)));
+    }
+}
+
+<style>
+    .modal-backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+        animation: fadeIn 0.2s ease;
+    }
+    
+    .modal-content {
+        background: white;
+        border-radius: 16px;
+        max-width: 800px;
+        width: 90%;
+        max-height: 90vh;
+        overflow-y: auto;
+        position: relative;
+        animation: slideIn 0.3s ease;
+    }
+    
+    .modal-close {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        background: none;
+        border: none;
+        font-size: 32px;
+        cursor: pointer;
+        color: #6b7280;
+        z-index: 1;
+    }
+    
+    .modal-header {
+        padding: 24px;
+        border-bottom: 1px solid #e5e7eb;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+    
+    .pokemon-name {
+        font-size: 28px;
+        font-weight: 700;
+        text-transform: capitalize;
+        margin: 0;
+    }
+    
+    .pokemon-number {
+        font-size: 20px;
+        color: #6b7280;
+    }
+    
+    .modal-body {
+        padding: 24px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+    }
+    
+    .pokemon-image-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .pokemon-image {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+    }
+    
+    .sprite-gallery {
+        display: flex;
+        gap: 8px;
+        margin-top: 16px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .sprite {
+        width: 64px;
+        height: 64px;
+        border: 2px solid #e5e7eb;
+        border-radius: 8px;
+        padding: 4px;
+    }
+    
+    .sprite.shiny {
+        border-color: #fbbf24;
+        background: #fef3c7;
+    }
+    
+    .info-group {
+        margin-bottom: 24px;
+    }
+    
+    .info-group h3 {
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 12px;
+        color: #374151;
+    }
+    
+    .pokemon-types {
+        display: flex;
+        gap: 8px;
+    }
+    
+    .type-badge {
+        padding: 6px 16px;
+        border-radius: 20px;
+        font-size: 14px;
+        font-weight: 500;
+        color: white;
+        text-transform: capitalize;
+    }
+    
+    .type-normal { background: #A8A878; }
+    .type-fire { background: #F08030; }
+    .type-water { background: #6890F0; }
+    .type-electric { background: #F8D030; }
+    .type-grass { background: #78C850; }
+    .type-ice { background: #98D8D8; }
+    .type-fighting { background: #C03028; }
+    .type-poison { background: #A040A0; }
+    .type-ground { background: #E0C068; }
+    .type-flying { background: #A890F0; }
+    .type-psychic { background: #F85888; }
+    .type-bug { background: #A8B820; }
+    .type-rock { background: #B8A038; }
+    .type-ghost { background: #705898; }
+    .type-dragon { background: #7038F8; }
+    .type-dark { background: #705848; }
+    .type-steel { background: #B8B8D0; }
+    .type-fairy { background: #EE99AC; }
+    
+    .physical-stats {
+        display: flex;
+        gap: 24px;
+    }
+    
+    .stat-item {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+    }
+    
+    .stat-label {
+        color: #6b7280;
+        font-size: 14px;
+    }
+    
+    .stat-value {
+        font-weight: 600;
+    }
+    
+    .stats-container {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .stat-row {
+        display: grid;
+        grid-template-columns: 100px 1fr 40px;
+        gap: 12px;
+        align-items: center;
+    }
+    
+    .stat-name {
+        font-size: 14px;
+        color: #374151;
+    }
+    
+    .stat-bar-container {
+        background: #e5e7eb;
+        height: 8px;
+        border-radius: 4px;
+        overflow: hidden;
+    }
+    
+    .stat-bar {
+        height: 100%;
+        background: #3b82f6;
+        transition: width 0.3s ease;
+    }
+    
+    .stat-number {
+        font-size: 14px;
+        font-weight: 600;
+        text-align: right;
+    }
+    
+    .abilities {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    
+    .ability-badge {
+        padding: 6px 12px;
+        background: #f3f4f6;
+        border: 1px solid #e5e7eb;
+        border-radius: 6px;
+        font-size: 14px;
+    }
+    
+    .ability-badge.hidden {
+        background: #fef3c7;
+        border-color: #fbbf24;
+    }
+    
+    .hidden-label {
+        font-size: 12px;
+        color: #92400e;
+        margin-left: 4px;
+    }
+    
+    .tracking-status {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .status-item {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+    }
+    
+    .status-value.yes {
+        color: #059669;
+        font-weight: 600;
+    }
+    
+    .status-value.no {
+        color: #dc2626;
+    }
+    
+    .date {
+        font-size: 12px;
+        color: #6b7280;
+        margin-left: 4px;
+    }
+    
+    .modal-footer {
+        padding: 24px;
+        border-top: 1px solid #e5e7eb;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .btn-primary {
+        padding: 12px 24px;
+        background: #3b82f6;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: background 0.2s ease;
+    }
+    
+    .btn-primary:hover {
+        background: #2563eb;
+    }
+    
+    @@keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+    
+    @@keyframes slideIn {
+        from {
+            transform: translateY(20px);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+    
+    @@media (max-width: 768px) {
+        .modal-body {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>

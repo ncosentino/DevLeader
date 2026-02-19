@@ -1,0 +1,239 @@
+@using PokedexBlazor.Models
+@using PokedexBlazor.Services
+
+<div class="pokemon-card @(Pokemon.TrackingInfo.IsCaptured ? "captured" : "") @(Pokemon.TrackingInfo.IsSeen ? "seen" : "")"
+     @onclick="() => OnCardClick.InvokeAsync(Pokemon.Id)">
+    <div class="pokemon-image">
+        @if (!string.IsNullOrEmpty(Pokemon.Details?.Sprites?.Other?.OfficialArtwork?.FrontDefault))
+        {
+            <img src="@Pokemon.Details.Sprites.Other.OfficialArtwork.FrontDefault" 
+                 alt="@Pokemon.Name" 
+                 loading="lazy" />
+        }
+        else if (!string.IsNullOrEmpty(Pokemon.Details?.Sprites?.FrontDefault))
+        {
+            <img src="@Pokemon.Details.Sprites.FrontDefault" 
+                 alt="@Pokemon.Name" 
+                 loading="lazy" />
+        }
+        else
+        {
+            <div class="no-image">No Image</div>
+        }
+        
+        <div class="tracking-indicators">
+            @if (Pokemon.TrackingInfo.IsCaptured)
+            {
+                <span class="indicator captured-indicator" title="Captured">✓</span>
+            }
+            else if (Pokemon.TrackingInfo.IsSeen)
+            {
+                <span class="indicator seen-indicator" title="Seen">👁</span>
+            }
+        </div>
+    </div>
+    
+    <div class="pokemon-info">
+        <div class="pokemon-number">#@Pokemon.Id.ToString("D3")</div>
+        <div class="pokemon-name">@Pokemon.Name</div>
+        
+        @if (Pokemon.Details?.Types != null)
+        {
+            <div class="pokemon-types">
+                @foreach (var type in Pokemon.Details.Types.OrderBy(t => t.Slot))
+                {
+                    <span class="type-badge type-@type.Type.Name.ToLower()">
+                        @type.Type.Name
+                    </span>
+                }
+            </div>
+        }
+    </div>
+    
+    <div class="pokemon-actions">
+        <button class="btn-action btn-capture" 
+                @onclick:stopPropagation="true"
+                @onclick="() => OnCaptureClick.InvokeAsync(Pokemon.Id)"
+                title="@(Pokemon.TrackingInfo.IsCaptured ? "Release" : "Capture")">
+            @if (Pokemon.TrackingInfo.IsCaptured)
+            {
+                <span>Release</span>
+            }
+            else
+            {
+                <span>Capture</span>
+            }
+        </button>
+    </div>
+</div>
+
+@code {
+    [Parameter, EditorRequired] public Pokemon Pokemon { get; set; } = null!;
+    [Parameter] public EventCallback<int> OnCardClick { get; set; }
+    [Parameter] public EventCallback<int> OnCaptureClick { get; set; }
+}
+
+<style>
+    .pokemon-card {
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        padding: 16px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .pokemon-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    }
+    
+    .pokemon-card.captured {
+        background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+        border: 2px solid #3b82f6;
+    }
+    
+    .pokemon-card.seen:not(.captured) {
+        background: linear-gradient(135deg, #fefce8 0%, #fef3c7 100%);
+        border: 2px solid #fbbf24;
+    }
+    
+    .pokemon-image {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #f3f4f6;
+        border-radius: 8px;
+        margin-bottom: 12px;
+    }
+    
+    .pokemon-image img {
+        width: 80%;
+        height: 80%;
+        object-fit: contain;
+    }
+    
+    .no-image {
+        color: #9ca3af;
+        font-size: 14px;
+    }
+    
+    .tracking-indicators {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        display: flex;
+        gap: 4px;
+    }
+    
+    .indicator {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        font-weight: bold;
+    }
+    
+    .captured-indicator {
+        background: #3b82f6;
+        color: white;
+    }
+    
+    .seen-indicator {
+        background: #fbbf24;
+        color: white;
+    }
+    
+    .pokemon-info {
+        text-align: center;
+        margin-bottom: 12px;
+    }
+    
+    .pokemon-number {
+        color: #6b7280;
+        font-size: 14px;
+        margin-bottom: 4px;
+    }
+    
+    .pokemon-name {
+        font-size: 18px;
+        font-weight: 600;
+        text-transform: capitalize;
+        margin-bottom: 8px;
+    }
+    
+    .pokemon-types {
+        display: flex;
+        gap: 6px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .type-badge {
+        padding: 4px 12px;
+        border-radius: 16px;
+        font-size: 12px;
+        font-weight: 500;
+        color: white;
+        text-transform: capitalize;
+    }
+    
+    .type-normal { background: #A8A878; }
+    .type-fire { background: #F08030; }
+    .type-water { background: #6890F0; }
+    .type-electric { background: #F8D030; }
+    .type-grass { background: #78C850; }
+    .type-ice { background: #98D8D8; }
+    .type-fighting { background: #C03028; }
+    .type-poison { background: #A040A0; }
+    .type-ground { background: #E0C068; }
+    .type-flying { background: #A890F0; }
+    .type-psychic { background: #F85888; }
+    .type-bug { background: #A8B820; }
+    .type-rock { background: #B8A038; }
+    .type-ghost { background: #705898; }
+    .type-dragon { background: #7038F8; }
+    .type-dark { background: #705848; }
+    .type-steel { background: #B8B8D0; }
+    .type-fairy { background: #EE99AC; }
+    
+    .pokemon-actions {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .btn-action {
+        padding: 8px 16px;
+        border: none;
+        border-radius: 6px;
+        font-size: 14px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+    
+    .btn-capture {
+        background: #3b82f6;
+        color: white;
+    }
+    
+    .btn-capture:hover {
+        background: #2563eb;
+    }
+    
+    .pokemon-card.captured .btn-capture {
+        background: #ef4444;
+    }
+    
+    .pokemon-card.captured .btn-capture:hover {
+        background: #dc2626;
+    }
+</style>

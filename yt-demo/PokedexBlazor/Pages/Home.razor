@@ -1,0 +1,230 @@
+﻿@page "/"
+@using PokedexBlazor.Services
+@using PokedexBlazor.Models
+@using PokedexBlazor.Components
+@inject PokemonStateService StateService
+@inject NavigationManager Navigation
+@implements IDisposable
+
+<PageTitle>Pokédex - Blazor Edition</PageTitle>
+
+<div class="pokedex-container">
+    <header class="pokedex-header">
+        <h1 class="pokedex-title">Pokédex</h1>
+        <p class="pokedex-subtitle">Track your Pokémon journey</p>
+    </header>
+    
+    <SearchFilter SearchTerm="@searchTerm"
+                  CurrentFilter="@currentFilter"
+                  TotalCount="@StateService.TotalCount"
+                  SeenCount="@StateService.SeenCount"
+                  CapturedCount="@StateService.CapturedCount"
+                  OnSearchTermChanged="HandleSearchChanged"
+                  OnFilterChanged="HandleFilterChanged" />
+    
+    @if (StateService.IsLoading && StateService.AllPokemon.Count == 0)
+    {
+        <div class="loading-container">
+            <div class="loading-spinner"></div>
+            <p>Loading Pokémon data...</p>
+        </div>
+    }
+    else if (!string.IsNullOrEmpty(StateService.ErrorMessage))
+    {
+        <div class="error-container">
+            <p>@StateService.ErrorMessage</p>
+            <button class="btn-retry" @onclick="LoadPokemon">Retry</button>
+        </div>
+    }
+    else
+    {
+        <div class="pokemon-grid">
+            @foreach (var pokemon in StateService.FilteredPokemon)
+            {
+                <PokemonCard Pokemon="pokemon"
+                           OnCardClick="HandleCardClick"
+                           OnCaptureClick="HandleCaptureClick" />
+            }
+        </div>
+        
+        @if (StateService.FilteredPokemon.Count == 0)
+        {
+            <div class="no-results">
+                <p>No Pokémon found matching your criteria.</p>
+            </div>
+        }
+        
+        @if (StateService.IsLoading)
+        {
+            <div class="loading-more">
+                <div class="loading-spinner"></div>
+                <p>Loading more Pokémon...</p>
+            </div>
+        }
+        else if (StateService.AllPokemon.Count < 1010) // Total Pokemon count as of Gen 9
+        {
+            <div class="load-more-container">
+                <button class="btn-load-more" @onclick="LoadMorePokemon">
+                    Load More Pokémon
+                </button>
+            </div>
+        }
+    }
+    
+    <PokemonDetailModal IsOpen="isModalOpen"
+                        Pokemon="selectedPokemon"
+                        OnClose="CloseModal"
+                        OnToggleCaptured="HandleCaptureClick" />
+</div>
+
+@code {
+    private bool isModalOpen = false;
+    private Pokemon? selectedPokemon = null;
+    private string searchTerm = string.Empty;
+    private PokemonFilter currentFilter = PokemonFilter.All;
+    
+    protected override async Task OnInitializedAsync()
+    {
+        StateService.OnStateChanged += StateHasChanged;
+        await StateService.InitializeAsync();
+        await LoadPokemon();
+    }
+    
+    private async Task LoadPokemon()
+    {
+        await StateService.LoadPokemonAsync(151); // Load original 151 Pokemon
+    }
+    
+    private async Task LoadMorePokemon()
+    {
+        await StateService.LoadMorePokemonAsync(50);
+    }
+    
+    private async Task HandleCardClick(int pokemonId)
+    {
+        await StateService.MarkAsSeenAsync(pokemonId);
+        selectedPokemon = StateService.GetPokemonById(pokemonId);
+        isModalOpen = true;
+    }
+    
+    private async Task HandleCaptureClick(int pokemonId)
+    {
+        await StateService.ToggleCapturedAsync(pokemonId);
+        if (isModalOpen && selectedPokemon?.Id == pokemonId)
+        {
+            selectedPokemon = StateService.GetPokemonById(pokemonId);
+        }
+    }
+    
+    private void HandleSearchChanged(string newSearchTerm)
+    {
+        searchTerm = newSearchTerm;
+        StateService.SetSearchTerm(newSearchTerm);
+    }
+    
+    private void HandleFilterChanged(PokemonFilter newFilter)
+    {
+        currentFilter = newFilter;
+        StateService.SetFilter(newFilter);
+    }
+    
+    private void CloseModal()
+    {
+        isModalOpen = false;
+        selectedPokemon = null;
+    }
+    
+    public void Dispose()
+    {
+        StateService.OnStateChanged -= StateHasChanged;
+    }
+}
+
+<style>
+    .pokedex-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    
+    .pokedex-header {
+        text-align: center;
+        margin-bottom: 32px;
+    }
+    
+    .pokedex-title {
+        font-size: 48px;
+        font-weight: 800;
+        color: #1f2937;
+        margin: 0 0 8px 0;
+    }
+    
+    .pokedex-subtitle {
+        font-size: 18px;
+        color: #6b7280;
+        margin: 0;
+    }
+    
+    .pokemon-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 20px;
+        margin-bottom: 40px;
+    }
+    
+    .loading-container, .error-container, .no-results {
+        text-align: center;
+        padding: 60px 20px;
+    }
+    
+    .loading-spinner {
+        width: 48px;
+        height: 48px;
+        border: 4px solid #e5e7eb;
+        border-top-color: #3b82f6;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin: 0 auto 16px;
+    }
+    
+    .btn-retry, .btn-load-more {
+        padding: 12px 24px;
+        background: #3b82f6;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: background 0.2s ease;
+    }
+    
+    .btn-retry:hover, .btn-load-more:hover {
+        background: #2563eb;
+    }
+    
+    .loading-more {
+        text-align: center;
+        padding: 20px;
+    }
+    
+    .load-more-container {
+        text-align: center;
+        padding: 40px 20px;
+    }
+    
+    @@keyframes spin {
+        to { transform: rotate(360deg); }
+    }
+    
+    @@media (max-width: 640px) {
+        .pokemon-grid {
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 16px;
+        }
+        
+        .pokedex-title {
+            font-size: 36px;
+        }
+    }
+</style>

@@ -1,0 +1,160 @@
+@using PokedexBlazor.Services
+
+<div class="search-filter-container">
+    <div class="search-box">
+        <input type="text" 
+               class="search-input" 
+               placeholder="Search by name, number, or type..."
+               value="@SearchTerm"
+               @oninput="OnSearchChanged" />
+        <span class="search-icon">🔍</span>
+    </div>
+    
+    <div class="filter-buttons">
+        <button class="filter-btn @(CurrentFilter == PokemonFilter.All ? "active" : "")"
+                @onclick="async () => await OnFilterChanged.InvokeAsync(PokemonFilter.All)">
+            All
+        </button>
+        <button class="filter-btn @(CurrentFilter == PokemonFilter.Seen ? "active" : "")"
+                @onclick="async () => await OnFilterChanged.InvokeAsync(PokemonFilter.Seen)">
+            Seen
+        </button>
+        <button class="filter-btn @(CurrentFilter == PokemonFilter.Captured ? "active" : "")"
+                @onclick="async () => await OnFilterChanged.InvokeAsync(PokemonFilter.Captured)">
+            Captured
+        </button>
+        <button class="filter-btn @(CurrentFilter == PokemonFilter.NotSeen ? "active" : "")"
+                @onclick="async () => await OnFilterChanged.InvokeAsync(PokemonFilter.NotSeen)">
+            Not Seen
+        </button>
+    </div>
+    
+    <div class="stats">
+        <div class="stat-item">
+            <span class="stat-label">Total:</span>
+            <span class="stat-value">@TotalCount</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-label">Seen:</span>
+            <span class="stat-value">@SeenCount</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-label">Captured:</span>
+            <span class="stat-value">@CapturedCount</span>
+        </div>
+    </div>
+</div>
+
+@code {
+    [Parameter] public string SearchTerm { get; set; } = string.Empty;
+    [Parameter] public PokemonFilter CurrentFilter { get; set; } = PokemonFilter.All;
+    [Parameter] public int TotalCount { get; set; }
+    [Parameter] public int SeenCount { get; set; }
+    [Parameter] public int CapturedCount { get; set; }
+    [Parameter] public EventCallback<string> OnSearchTermChanged { get; set; }
+    [Parameter] public EventCallback<PokemonFilter> OnFilterChanged { get; set; }
+    
+    private async Task OnSearchChanged(ChangeEventArgs e)
+    {
+        await OnSearchTermChanged.InvokeAsync(e.Value?.ToString() ?? string.Empty);
+    }
+}
+
+<style>
+    .search-filter-container {
+        background: white;
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        margin-bottom: 24px;
+    }
+    
+    .search-box {
+        position: relative;
+        margin-bottom: 16px;
+    }
+    
+    .search-input {
+        width: 100%;
+        padding: 12px 40px 12px 16px;
+        border: 2px solid #e5e7eb;
+        border-radius: 8px;
+        font-size: 16px;
+        transition: border-color 0.2s ease;
+    }
+    
+    .search-input:focus {
+        outline: none;
+        border-color: #3b82f6;
+    }
+    
+    .search-icon {
+        position: absolute;
+        right: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 20px;
+    }
+    
+    .filter-buttons {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-bottom: 16px;
+    }
+    
+    .filter-btn {
+        padding: 8px 16px;
+        border: 2px solid #e5e7eb;
+        background: white;
+        border-radius: 6px;
+        font-size: 14px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+    
+    .filter-btn:hover {
+        background: #f3f4f6;
+    }
+    
+    .filter-btn.active {
+        background: #3b82f6;
+        color: white;
+        border-color: #3b82f6;
+    }
+    
+    .stats {
+        display: flex;
+        gap: 24px;
+        padding-top: 16px;
+        border-top: 1px solid #e5e7eb;
+    }
+    
+    .stat-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    
+    .stat-label {
+        color: #6b7280;
+        font-size: 14px;
+    }
+    
+    .stat-value {
+        font-size: 18px;
+        font-weight: 600;
+        color: #1f2937;
+    }
+    
+    @@media (max-width: 640px) {
+        .filter-buttons {
+            justify-content: center;
+        }
+        
+        .stats {
+            justify-content: space-around;
+        }
+    }
+</style>
