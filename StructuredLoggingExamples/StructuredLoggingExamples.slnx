@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="AspNetCoreSerilogFromAppSettingsExample/AspNetCoreSerilogFromAppSettingsExample.csproj" Id="296542c6-ebaa-43db-8a97-1f8d9f3f30ca" />
+  <Project Path="LoggingScopeExample1/LoggingScopeExample1.csproj" />
+  <Project Path="LoggingScopeExample2/LoggingScopeExample2.csproj" />
+  <Project Path="VibeCodeSerilogAspNetCore/VibeCodeSerilogAspNetCore.csproj" Id="5a8c7d65-3bc3-4b76-aa44-0164ecc4a462" />
+</Solution>

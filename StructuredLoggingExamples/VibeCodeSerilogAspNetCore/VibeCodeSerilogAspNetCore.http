@@ -1,0 +1,6 @@
+@VibeCodeSerilogAspNetCore_HostAddress = http://localhost:5201
+
+GET {{VibeCodeSerilogAspNetCore_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,6 @@
+@AspNetCoreSerilogFromAppSettingsExample_HostAddress = http://localhost:5038
+
+GET {{AspNetCoreSerilogFromAppSettingsExample_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
