@@ -4,101 +4,78 @@ namespace VibeCodedAnalyzers.ConsoleApp.Tests;
 
 public class FunWithNumbersTests
 {
+    private readonly bool _someField = false;
+
     [Theory]
-    [InlineData(0)]
-    [InlineData(2)]
-    [InlineData(43)]
-    public void IsNumberEven_ReturnsTrue(int input)
+    [InlineData(0, true)]
+    [InlineData(2, true)]
+    [InlineData(42, true)]
+    [InlineData(1, false)]
+    [InlineData(3, false)]
+    [InlineData(99, false)]
+    public void IsNumberEven_ReturnsExpected(int input, bool expected)
     {
         var sut = new FunWithNumbers();
         var result = sut.IsNumberEven(input);
-        Assert.True(result, $"Expected {input} to be even.");
+        Assert.Equal(expected, result);
+
+
+        Assert.True(1 == 2, $"Expected to get true for the expression.");
+        Assert.False(result, $"Expected to get false for '{nameof(result)}'.");
+        Assert.True(DoesSomething(), $"Expected to get true for '{nameof(DoesSomething)}'.");
+        Assert.False(_someField, $"Expected to get false for '{nameof(_someField)}'.");
     }
 
-    [Theory]
-    [InlineData(1)]
-    [InlineData(3)]
-    [InlineData(101)]
-    public void IsNumberEven_ReturnsFalse(int input)
+    private bool DoesSomething()
     {
-        var sut = new FunWithNumbers();
-        var result = sut.IsNumberEven(input);
-        Assert.False(result, $"Expected {input} to be odd (not even).");
+        return false;
     }
 
     [Theory]
-    [InlineData(1)]
-    [InlineData(3)]
-    [InlineData(101)]
-    public void IsNumberOdd_ReturnsTrue(int input)
-    {
-        var sut = new FunWithNumbers();
-        var result = sut.IsNumberOdd(input);
-        Assert.True(result, $"Expected {input} to be odd.");
-    }
-
-    [Theory]
-    [InlineData(0)]
-    [InlineData(2)]
-    [InlineData(42)]
-    public void IsNumberOdd_ReturnsFalse(int input)
+    [InlineData(0, false)]
+    [InlineData(2, false)]
+    [InlineData(42, false)]
+    [InlineData(1, true)]
+    [InlineData(3, true)]
+    [InlineData(99, true)]
+    public void IsNumberOdd_ReturnsExpected(int input, bool expected)
     {
         var sut = new FunWithNumbers();
         var result = sut.IsNumberOdd(input);
-        Assert.False(result, $"Expected {input} to be even (not odd).");
+        Assert.Equal(expected, result);
     }
 
     [Theory]
-    [InlineData(2)]
-    [InlineData(3)]
-    [InlineData(5)]
-    [InlineData(17)]
-    [InlineData(19)]
-    public void IsNumberPrime_ReturnsTrue(int input)
+    [InlineData(-1, false)]
+    [InlineData(0, false)]
+    [InlineData(1, false)]
+    [InlineData(2, true)]
+    [InlineData(3, true)]
+    [InlineData(4, false)]
+    [InlineData(5, true)]
+    [InlineData(9, false)]
+    [InlineData(11, true)]
+    [InlineData(12, false)]
+    public void IsNumberPrime_ReturnsExpected(int input, bool expected)
     {
         var sut = new FunWithNumbers();
         var result = sut.IsNumberPrime(input);
-        Assert.True(result, $"Expected {input} to be prime.");
+        Assert.Equal(expected, result);
     }
 
     [Theory]
-    [InlineData(-1)]
-    [InlineData(0)]
-    [InlineData(1)]
-    [InlineData(4)]
-    [InlineData(16)]
-    [InlineData(21)]
-    public void IsNumberPrime_ReturnsFalse(int input)
-    {
-        var sut = new FunWithNumbers();
-        var result = sut.IsNumberPrime(input);
-        Assert.False(result, $"Expected {input} to be non-prime.");
-    }
-
-    [Theory]
-    [InlineData(6)]    // 1 + 2 + 3 = 6
-    [InlineData(28)]   // 1 + 2 + 4 + 7 + 14 = 28
-    [InlineData(496)]  // known perfect number
-    public void IsNumberPerfect_ReturnsTrue(int input)
+    [InlineData(-1, false)]
+    [InlineData(0, false)]
+    [InlineData(1, false)]
+    [InlineData(6, true)]
+    [InlineData(28, true)]
+    [InlineData(496, true)]
+    [InlineData(12, false)]
+    [InlineData(27, false)]
+    public void IsNumberPerfect_ReturnsExpected(int input, bool expected)
     {
         var sut = new FunWithNumbers();
         var result = sut.IsNumberPerfect(input);
-        Assert.True(result, $"Expected {input} to be a perfect number.");
-    }
-
-    [Theory]
-    [InlineData(-1)]
-    [InlineData(0)]
-    [InlineData(1)]
-    [InlineData(2)]
-    [InlineData(3)]
-    [InlineData(4)]
-    [InlineData(12)]
-    [InlineData(27)]
-    public void IsNumberPerfect_ReturnsFalse(int input)
-    {
-        var sut = new FunWithNumbers();
-        var result = sut.IsNumberPerfect(input);
-        Assert.False(result, $"Expected {input} to not be a perfect number.");
+        Assert.Equal(expected, result);
     }
 }

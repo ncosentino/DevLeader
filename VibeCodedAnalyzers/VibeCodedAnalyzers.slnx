@@ -1,7 +1,8 @@
 <Solution>
   <Folder Name="/Solution Items/" />
+  <Project Path="VibeCodedAnalyzers.Analyzers.Tests/VibeCodedAnalyzers.Analyzers.Tests.csproj" />
+  <Project Path="VibeCodedAnalyzers.Analyzers/VibeCodedAnalyzers.Analyzers.csproj" />
+  <Project Path="VibeCodedAnalyzers.CodeFixes/VibeCodedAnalyzers.CodeFixes.csproj" />
   <Project Path="VibeCodedAnalyzers.ConsoleApp.Tests/VibeCodedAnalyzers.ConsoleApp.Tests.csproj" />
   <Project Path="VibeCodedAnalyzers.ConsoleApp/VibeCodedAnalyzers.ConsoleApp.csproj" />
-  <Project Path="VibeCodedAnalyzers.RangeActAssertAnalyzer.Tests/VibeCodedAnalyzers.RangeActAssertAnalyzer.Tests.csproj" />
-  <Project Path="VibeCodedAnalyzers.RangeActAssertAnalyzer/VibeCodedAnalyzers.RangeActAssertAnalyzer.csproj" />
 </Solution>

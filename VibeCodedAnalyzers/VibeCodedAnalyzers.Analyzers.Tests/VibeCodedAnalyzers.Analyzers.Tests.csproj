@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net10.0</TargetFramework>
+		<IsPackable>false</IsPackable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<OutputType>Exe</OutputType>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="xunit.v3" Version="3.2.1" />
+		<PackageReference Include="xunit.v3.runner.msbuild" Version="3.2.1" />
+		<PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.11.0" />
+		<PackageReference Include="Microsoft.CodeAnalysis.Common" Version="4.11.0" />
+	</ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\VibeCodedAnalyzers.Analyzers\VibeCodedAnalyzers.Analyzers.csproj" />
+  </ItemGroup>
+</Project>
