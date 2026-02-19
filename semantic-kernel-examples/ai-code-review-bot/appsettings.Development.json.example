@@ -1,0 +1,7 @@
+{
+  "AIProvider": {
+    "Type": "openai",
+    "ModelId": "gpt-4o",
+    "ApiKey": "YOUR_OPENAI_API_KEY_HERE"
+  }
+}
