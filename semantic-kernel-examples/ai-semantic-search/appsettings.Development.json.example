@@ -1,0 +1,8 @@
+{
+  "EmbeddingAI": {
+    "Type": "azureopenai",
+    "ModelId": "text-embedding-ada-002",
+    "Endpoint": "https://your-resource.openai.azure.com/",
+    "ApiKey": "your-api-key"
+  }
+}

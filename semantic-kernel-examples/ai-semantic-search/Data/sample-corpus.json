@@ -1,0 +1,122 @@
+[
+  {
+    "Id": "sk-001",
+    "Title": "What is Semantic Kernel?",
+    "Body": "Semantic Kernel is an open-source SDK from Microsoft that integrates large language models into .NET, Python, and Java applications. It provides abstractions for AI services, plugins, agents, and vector stores.",
+    "Category": "concept"
+  },
+  {
+    "Id": "sk-002",
+    "Title": "How do I add a plugin to Semantic Kernel?",
+    "Body": "Create a class with methods decorated with [KernelFunction] and [Description] attributes, then register it using kernel.Plugins.AddFromObject(new MyPlugin()). The kernel will automatically expose these functions to the LLM.",
+    "Category": "howto"
+  },
+  {
+    "Id": "sk-003",
+    "Title": "What is the difference between ChatCompletionAgent and AssistantAgent?",
+    "Body": "ChatCompletionAgent runs entirely within Semantic Kernel using any chat completion model. AssistantAgent wraps the OpenAI Assistants API and supports persistent threads and file attachments. Use ChatCompletionAgent for portable apps, AssistantAgent for OpenAI-specific features.",
+    "Category": "concept"
+  },
+  {
+    "Id": "sk-004",
+    "Title": "How do I configure Azure OpenAI in Semantic Kernel?",
+    "Body": "Call builder.AddAzureOpenAIChatCompletion(deploymentName, endpoint, apiKey) on the KernelBuilder. For embeddings, call builder.AddAzureOpenAITextEmbeddingGeneration(deploymentName, endpoint, apiKey). Store credentials in appsettings.Development.json or environment variables, never in source code.",
+    "Category": "howto"
+  },
+  {
+    "Id": "sk-005",
+    "Title": "What is RAG and how does it work with Semantic Kernel?",
+    "Body": "RAG (Retrieval-Augmented Generation) is a pattern where you embed documents into a vector store, embed a user query, retrieve the most similar document chunks, and inject them into an LLM prompt. SK provides ITextEmbeddingGenerationService for embeddings and VectorStore/VectorStoreCollection for storage and retrieval.",
+    "Category": "concept"
+  },
+  {
+    "Id": "sk-006",
+    "Title": "Why is my Semantic Kernel plugin not being called?",
+    "Body": "Common causes: FunctionChoiceBehavior is set to None (disabling auto-invoke), the plugin was not added to the kernel before the call, the function description is too vague for the LLM to select it, or the model does not support function calling. Check that FunctionChoiceBehavior.Auto() is set and the plugin is registered.",
+    "Category": "troubleshooting"
+  },
+  {
+    "Id": "sk-007",
+    "Title": "What is InMemoryVectorStore and when should I use it?",
+    "Body": "InMemoryVectorStore is a zero-infrastructure vector store from the Microsoft.SemanticKernel.Connectors.InMemory package. It stores all vectors in process memory with no persistence. Use it for development, demos, and unit tests. For production, swap it for Azure AI Search, Qdrant, or another persistent backend.",
+    "Category": "concept"
+  },
+  {
+    "Id": "sk-008",
+    "Title": "How do I implement streaming with Semantic Kernel?",
+    "Body": "Use IChatCompletionService.GetStreamingChatMessageContentsAsync() and await foreach over the returned IAsyncEnumerable<StreamingChatMessageContent>. Write each chunk to Console as it arrives. Streaming is not supported by all models or configurations.",
+    "Category": "howto"
+  },
+  {
+    "Id": "sk-009",
+    "Title": "What is FunctionChoiceBehavior in Semantic Kernel?",
+    "Body": "FunctionChoiceBehavior controls whether the LLM can automatically invoke registered plugins. Auto() lets the model choose which functions to call. None() disables all tool dispatch (for explicit pipeline control). Required() forces the model to call at least one function.",
+    "Category": "concept"
+  },
+  {
+    "Id": "sk-010",
+    "Title": "How do I pass structured output (JSON) from a Semantic Kernel prompt?",
+    "Body": "Set ResponseFormat = ChatResponseFormat.CreateJsonObjectFormat() in the PromptExecutionSettings, then parse the model's text output with JsonSerializer.Deserialize<T>(). Use a clear JSON schema in the prompt to guide the model's output format.",
+    "Category": "howto"
+  },
+  {
+    "Id": "sk-011",
+    "Title": "My embedding dimensions don't match - what should I do?",
+    "Body": "The [VectorStoreVector] attribute dimension must match the model's output size: 1536 for text-embedding-ada-002 and text-embedding-3-small, 3072 for text-embedding-3-large. A mismatch will cause errors when upserting or searching. Update the attribute and re-index.",
+    "Category": "troubleshooting"
+  },
+  {
+    "Id": "sk-012",
+    "Title": "What is VectorSearchFilter and how do I use it?",
+    "Body": "VectorSearchFilter is used in VectorSearchOptions<T> to filter results by data field values before scoring. Call filter.EqualTo(fieldName, value) to add equality conditions. Only fields marked [VectorStoreData(IsFilterable = true)] can be filtered.",
+    "Category": "concept"
+  },
+  {
+    "Id": "sk-013",
+    "Title": "How do I create a multi-agent pipeline in Semantic Kernel?",
+    "Body": "Use AgentGroupChat with multiple ChatCompletionAgent instances. Configure a KernelFunctionSelectionStrategy to choose which agent responds, and a KernelFunctionTerminationStrategy to decide when the conversation ends. Each agent should have a focused system prompt for its role.",
+    "Category": "howto"
+  },
+  {
+    "Id": "sk-014",
+    "Title": "Semantic Kernel is throwing SKEXP0001 warnings - should I fix them?",
+    "Body": "SKEXP0001 marks experimental SK features that may change between versions. Add <NoWarn>SKEXP0001</NoWarn> to your .csproj to suppress them. These are not errors -- the features work, they are just not yet stable API surface. Watch the SK changelog for when features graduate to stable.",
+    "Category": "troubleshooting"
+  },
+  {
+    "Id": "sk-015",
+    "Title": "What is KernelFunctionFactory.CreateFromPrompt?",
+    "Body": "KernelFunctionFactory.CreateFromPrompt creates a KernelFunction from an inline prompt template without needing a class or method. Use {{$variableName}} placeholders for dynamic inputs. Call kernel.InvokeAsync(function, new KernelArguments { [\"variableName\"] = value }) to execute it.",
+    "Category": "concept"
+  },
+  {
+    "Id": "di-001",
+    "Title": "What is dependency injection?",
+    "Body": "Dependency injection is a design pattern where a class receives its dependencies from an external source rather than creating them itself. In .NET, the built-in IServiceCollection registers services, and IServiceProvider resolves them via constructor injection.",
+    "Category": "concept"
+  },
+  {
+    "Id": "di-002",
+    "Title": "What is the difference between transient, scoped, and singleton lifetime?",
+    "Body": "Transient services are created on every request. Scoped services are created once per HTTP request (or scope). Singleton services are created once for the application lifetime. Choose based on how long the service state should survive.",
+    "Category": "concept"
+  },
+  {
+    "Id": "di-003",
+    "Title": "How do I register a service in .NET dependency injection?",
+    "Body": "Call services.AddTransient<IMyService, MyService>(), services.AddScoped<IMyService, MyService>(), or services.AddSingleton<IMyService, MyService>() in Program.cs or a Startup.cs ConfigureServices method.",
+    "Category": "howto"
+  },
+  {
+    "Id": "di-004",
+    "Title": "Can I inject multiple implementations of the same interface?",
+    "Body": "Yes. Register multiple services with the same interface type. Inject IEnumerable<IMyService> to receive all implementations. The order of resolution matches the registration order. This is the standard pattern for plugin/handler pipelines.",
+    "Category": "howto"
+  },
+  {
+    "Id": "di-005",
+    "Title": "Why is my scoped service being resolved as a singleton?",
+    "Body": "Capturing a scoped service in a singleton is a captive dependency anti-pattern. The singleton holds a reference to the first scope's instance forever. Use IServiceScopeFactory and create a new scope per operation, or redesign the scoped service as transient.",
+    "Category": "troubleshooting"
+  }
+]
