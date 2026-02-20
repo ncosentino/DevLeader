@@ -1,0 +1,8 @@
+{
+  "AIProvider": {
+    "Type": "azureopenai",
+    "ModelId": "your-deployment-name",
+    "Endpoint": "https://your-resource.openai.azure.com/",
+    "ApiKey": "your-api-key"
+  }
+}
