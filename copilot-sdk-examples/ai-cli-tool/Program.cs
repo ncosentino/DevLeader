@@ -35,11 +35,11 @@ var tools = new List<AIFunction>
 };
 
 // ── Client & Session ──────────────────────────────────────────────────────────
-var clientOptions = new CopilotClientOptions();
+// ghp_ classic PATs only work via the GITHUB_TOKEN env var, not via GithubToken option.
 if (!string.IsNullOrWhiteSpace(config.GithubToken))
-    clientOptions.GithubToken = config.GithubToken;
+    Environment.SetEnvironmentVariable("GITHUB_TOKEN", config.GithubToken);
 
-await using var client = new CopilotClient(clientOptions);
+await using var client = new CopilotClient();
 await client.StartAsync();
 
 await RunInteractiveLoopAsync(client, config, tools);

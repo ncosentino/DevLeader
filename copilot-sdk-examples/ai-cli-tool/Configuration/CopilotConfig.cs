@@ -4,7 +4,7 @@ public sealed class CopilotConfig
 {
     public const string SectionName = "Copilot";
 
-    public string Model { get; init; } = "gpt-5";
+    public string Model { get; init; } = "gpt-4o";
     public string? GithubToken { get; init; }
     public string SystemPrompt { get; init; } =
         "You are an expert AI coding assistant for .NET developers. " +
