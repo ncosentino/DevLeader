@@ -2,7 +2,7 @@
 
 [![Dev Leader YouTube](https://img.shields.io/badge/YouTube-Dev%20Leader-red?logo=youtube)](https://www.youtube.com/@devleader)
 [![Dev Leader Blog](https://img.shields.io/badge/Blog-devleader.ca-blue)](https://www.devleader.ca)
-[![Linktree](https://img.shields.io/badge/Linktree-devleader-green?logo=linktree)](https://www.linktr.ee/devleader)
+[![Linktree](https://img.shields.io/badge/Linktree-devleader-green?logo=linktree)](https://links.devleader.ca)
 
 Learn how to build custom **Roslyn analyzers and code fixes** for C# using vibe coding with AI tools like GitHub Copilot and ChatGPT. This solution demonstrates how to enforce coding conventions (such as Arrange/Act/Assert comments in tests and required assert messages) directly inside Visual Studio and the .NET compiler pipeline.
 
@@ -46,4 +46,4 @@ Learn how to build custom **Roslyn analyzers and code fixes** for C# using vibe 
 
 - 🎥 **YouTube:** [youtube.com/@devleader](https://www.youtube.com/@devleader)
 - 📝 **Blog:** [devleader.ca](https://www.devleader.ca)
-- 🌐 **All Links:** [linktr.ee/devleader](https://www.linktr.ee/devleader)
+- 🌐 **All Links:** [links.devleader.ca](https://links.devleader.ca)

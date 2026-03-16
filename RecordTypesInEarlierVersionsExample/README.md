@@ -8,6 +8,6 @@ https://www.devleader.ca/2023/01/29/simple-secrets-to-access-to-the-dotnet-recor
 * Write code that uses record types :)
 
 # Follow Up
-If you found this useful, please consider checking out my other content here: https://linktr.ee/devleader
+If you found this useful, please consider checking out my other content here: https://links.devleader.ca
 
 Consider following along on social media and let me know your thoughts and questions!

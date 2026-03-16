@@ -2,7 +2,7 @@
 
 [![Dev Leader YouTube](https://img.shields.io/badge/YouTube-Dev%20Leader-red?logo=youtube)](https://www.youtube.com/@devleader)
 [![Dev Leader Blog](https://img.shields.io/badge/Blog-devleader.ca-blue)](https://www.devleader.ca)
-[![Linktree](https://img.shields.io/badge/Linktree-devleader-green?logo=linktree)](https://www.linktr.ee/devleader)
+[![Linktree](https://img.shields.io/badge/Linktree-devleader-green?logo=linktree)](https://links.devleader.ca)
 
 Practical **structured logging** examples for .NET and ASP.NET Core using **Serilog**. Learn how to move beyond plain-text logs with queryable key-value properties, how to use **logging scopes** to add contextual information across multiple log entries, and how to configure Serilog entirely from `appsettings.json` without touching code.
 
@@ -47,4 +47,4 @@ Practical **structured logging** examples for .NET and ASP.NET Core using **Seri
 
 - 🎥 **YouTube:** [youtube.com/@devleader](https://www.youtube.com/@devleader)
 - 📝 **Blog:** [devleader.ca](https://www.devleader.ca)
-- 🌐 **All Links:** [linktr.ee/devleader](https://www.linktr.ee/devleader)
+- 🌐 **All Links:** [links.devleader.ca](https://links.devleader.ca)

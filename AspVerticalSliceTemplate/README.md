@@ -6,7 +6,7 @@ This solution will contain projects that help explain concepts around async Even
 
 # Follow Up
 If you found this useful, please consider checking out my other content here:    
-https://linktr.ee/devleader    
+https://links.devleader.ca    
 
 Keep in mind that my newsletter subscribers received early access to the associated YouTube video along with an exclusive article. You can subscribe for free here:    
 https://subscribe.devleader.ca    

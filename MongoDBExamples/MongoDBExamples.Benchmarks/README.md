@@ -16,7 +16,7 @@ This project contains example code for MongoDB in C# explaining benchmarks and p
 - [FREE Intro to Software Development](https://www.youtube.com/playlist?list=PLzATctVhnsggb3lj53T8fJSK6LJQFUyKS)
 
 ## 🗣️ Social Media & Links:
-- [All My Links](https://linktr.ee/devleader)
+- [All My Links](https://links.devleader.ca)
 - [Blog](https://www.devleader.ca/)
 - [TikTok](https://www.tiktok.com/@devleader)
 - [LinkedIn](https://www.linkedin.com/in/nickcosentino)

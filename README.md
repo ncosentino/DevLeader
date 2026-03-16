@@ -12,7 +12,7 @@ This repo contains projects referred to by my website, [Dev Leader](https://www.
 # More info
 If you're interested in the topics you see here, you can find much more from my social media platforms below:    
     
- - [All of my links](https://linktr.ee/devleader)
+ - [All of my links](https://links.devleader.ca)
  - [Website - Dev Leader](https://www.devleader.ca)
  - [FREE Newsletter](https://subscribe.devleader.ca)
  - [LinkedIn - Nick Cosentino](https://www.linkedin.com/in/nickcosentino/)

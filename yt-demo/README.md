@@ -2,7 +2,7 @@
 
 [![Dev Leader YouTube](https://img.shields.io/badge/YouTube-Dev%20Leader-red?logo=youtube)](https://www.youtube.com/@devleader)
 [![Dev Leader Blog](https://img.shields.io/badge/Blog-devleader.ca-blue)](https://www.devleader.ca)
-[![Linktree](https://img.shields.io/badge/Linktree-devleader-green?logo=linktree)](https://www.linktr.ee/devleader)
+[![Linktree](https://img.shields.io/badge/Linktree-devleader-green?logo=linktree)](https://links.devleader.ca)
 
 Projects vibe-coded live on YouTube using **Claude Flow** — an AI agent swarm framework that orchestrates multiple Claude AI agents to collaboratively plan and build software. This directory contains the output of those demos, including the **PokedexBlazor** Blazor WebAssembly app built entirely by AI agents.
 
@@ -45,4 +45,4 @@ Then open `http://localhost:5047` in your browser.
 
 - 🎥 **YouTube:** [youtube.com/@devleader](https://www.youtube.com/@devleader)
 - 📝 **Blog:** [devleader.ca](https://www.devleader.ca)
-- 🌐 **All Links:** [linktr.ee/devleader](https://www.linktr.ee/devleader)
+- 🌐 **All Links:** [links.devleader.ca](https://links.devleader.ca)

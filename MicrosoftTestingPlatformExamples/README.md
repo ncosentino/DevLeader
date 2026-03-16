@@ -2,7 +2,7 @@
 
 [![Dev Leader YouTube](https://img.shields.io/badge/YouTube-Dev%20Leader-red?logo=youtube)](https://www.youtube.com/@devleader)
 [![Dev Leader Blog](https://img.shields.io/badge/Blog-devleader.ca-blue)](https://www.devleader.ca)
-[![Linktree](https://img.shields.io/badge/Linktree-devleader-green?logo=linktree)](https://www.linktr.ee/devleader)
+[![Linktree](https://img.shields.io/badge/Linktree-devleader-green?logo=linktree)](https://links.devleader.ca)
 
 Explore the **Microsoft Testing Platform (MTP)** — the modern, lightweight replacement for VSTest — with practical examples across the most popular .NET test frameworks: **xUnit v3**, **TUnit**, **MSTest**, and legacy **xUnit v2**. Each project shows how to wire up the framework with MTP, run tests as standalone executables, and take advantage of the new extensibility model.
 
@@ -48,4 +48,4 @@ Explore the **Microsoft Testing Platform (MTP)** — the modern, lightweight rep
 
 - 🎥 **YouTube:** [youtube.com/@devleader](https://www.youtube.com/@devleader)
 - 📝 **Blog:** [devleader.ca](https://www.devleader.ca)
-- 🌐 **All Links:** [linktr.ee/devleader](https://www.linktr.ee/devleader)
+- 🌐 **All Links:** [links.devleader.ca](https://links.devleader.ca)

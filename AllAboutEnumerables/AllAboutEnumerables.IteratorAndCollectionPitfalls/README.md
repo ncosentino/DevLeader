@@ -7,6 +7,6 @@ You can also follow along in the corresponding blog post here:
 
 # Follow Up
 If you found this useful, please consider checking out my other content here:    
-https://linktr.ee/devleader
+https://links.devleader.ca
 
 Consider following along on social media and let me know your thoughts and questions!

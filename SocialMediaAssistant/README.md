@@ -8,6 +8,6 @@ https://www.youtube.com/watch?v=PKJIUURtx90&list=PLzATctVhnsggCKstGuPybewz45Jlkj
 * The focus is on metrics to start with and posting automation will come later
 
 # Follow Up
-If you found this useful, please consider checking out my other content here: https://linktr.ee/devleader
+If you found this useful, please consider checking out my other content here: https://links.devleader.ca
 
 Consider following along on social media and let me know your thoughts and questions!
