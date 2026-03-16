@@ -1,6 +1,22 @@
-# Pokédex - Blazor WebAssembly Edition
+# Pokédex Blazor WebAssembly App — Vibe Coded with AI Agent Swarms in C#
 
-A modern Pokédex application built with Blazor WebAssembly and .NET 9, allowing users to browse, search, and track their Pokémon encounters.
+[![YouTube](https://img.shields.io/badge/YouTube-Dev%20Leader-red?logo=youtube)](https://www.youtube.com/@devleader)
+[![Blog](https://img.shields.io/badge/Blog-devleader.ca-blue)](https://www.devleader.ca)
+[![Newsletter](https://img.shields.io/badge/Newsletter-subscribe-orange)](https://weekly.devleader.ca)
+[![All Links](https://img.shields.io/badge/All%20Links-links.devleader.ca-green)](https://links.devleader.ca)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Nick%20Cosentino-blue?logo=linkedin)](https://www.linkedin.com/in/nickcosentino/)
+
+A modern Pokédex application built with Blazor WebAssembly and .NET 9, allowing users to browse, search, and track their Pokémon encounters. This project was **vibe-coded entirely by AI agent swarms** using Claude Flow — no manual code was written.
+
+## Watch the Video
+
+### How To Setup Claude Flow To Run Agent Swarms! I CAN'T BELIEVE IT!
+[![How To Setup Claude Flow To Run Agent Swarms! I CAN'T BELIEVE IT!](https://img.youtube.com/vi/x4z1gON7lso/hqdefault.jpg)](https://youtu.be/x4z1gON7lso)
+
+## Related Articles
+
+- [Vibe Coding - Dev Leader Weekly 88](https://www.devleader.ca/2025/03/22/vibe-coding-dev-leader-weekly-88)
+- [Vibe Coding 2.0 - Dev Leader Weekly 115](https://www.devleader.ca/2025/11/08/vibe-coding-20-dev-leader-weekly-115)
 
 ## Features
 
@@ -118,3 +134,35 @@ This project is for educational purposes. Pokémon and all related names are tra
 - [PokéAPI](https://pokeapi.co/) for providing the Pokémon data
 - The Blazor team at Microsoft for the excellent framework
 - The Pokémon community for inspiration
+
+## Newsletter
+
+If you found this useful and you want to learn more about C#, .NET, and software engineering, subscribe to the free Dev Leader Weekly newsletter:
+
+[Subscribe to Dev Leader Weekly](https://weekly.devleader.ca)
+
+## Connect with Dev Leader
+
+- [All Links](https://links.devleader.ca)
+- [Website - Dev Leader](https://www.devleader.ca)
+- [YouTube - Dev Leader](https://www.youtube.com/@DevLeader)
+- [YouTube - Dev Leader Path To Tech](https://www.youtube.com/@DevLeaderPathToTech)
+- [YouTube - Dev Leader Podcast](https://www.youtube.com/@DevLeaderPodcast)
+- [YouTube - CodeCommute](https://www.youtube.com/@CodeCommute)
+- [Newsletter - Dev Leader Weekly](https://weekly.devleader.ca)
+- [LinkedIn - Nick Cosentino](https://www.linkedin.com/in/nickcosentino/)
+- [GitHub - ncosentino](https://github.com/ncosentino/)
+- [Twitter/X - Dev Leader](https://twitter.com/DevLeaderCa)
+- [Threads - Dev Leader](https://www.threads.com/@dev.leader)
+- [Bluesky - Dev Leader](https://bsky.app/profile/devleader.ca)
+- [Mastodon - Dev Leader](https://hachyderm.io/@devleader)
+- [Facebook - Dev Leader](https://www.facebook.com/DevLeaderCa)
+- [TikTok - Dev Leader](https://www.tiktok.com/@devleader)
+- [Twitch - Dev Leader](https://www.twitch.tv/devleaderca)
+- [Stack Overflow - Nick Cosentino](https://stackoverflow.com/users/2704424)
+
+---
+
+[![BrandGhost](https://img.shields.io/badge/Powered%20by-BrandGhost-blueviolet?logo=ghost)](https://www.brandghost.ai)
+
+Powered by [BrandGhost](https://www.brandghost.ai) 👻

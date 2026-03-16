@@ -1,6 +1,14 @@
-# AI Semantic Search
+# AI Semantic Search - Vector Search with Semantic Kernel in C# and .NET
 
-A .NET 9 console app that indexes a corpus of items into an in-memory vector store and provides semantic (meaning-based) search using Semantic Kernel and text embeddings.
+[![YouTube](https://img.shields.io/badge/YouTube-Dev%20Leader-red?logo=youtube)](https://www.youtube.com/@devleader)
+[![Blog](https://img.shields.io/badge/Blog-devleader.ca-blue)](https://www.devleader.ca)
+[![Newsletter](https://img.shields.io/badge/Newsletter-subscribe-orange)](https://weekly.devleader.ca)
+[![All Links](https://img.shields.io/badge/All%20Links-links.devleader.ca-green)](https://links.devleader.ca)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Nick%20Cosentino-blue?logo=linkedin)](https://www.linkedin.com/in/nickcosentino/)
+
+A .NET 9 console application that indexes a corpus of items into an in-memory vector store and provides semantic (meaning-based) search using Semantic Kernel and text embeddings. Search by meaning rather than exact keywords — find relevant results even when the query doesn't match the words in the document.
+
+This example demonstrates how to build a full embedding pipeline in C# using Semantic Kernel's vector store APIs: batch embedding with `ITextEmbeddingGenerationService`, upserting into `VectorStoreCollection<K,V>`, and performing top-k similarity search with optional category filtering via `VectorSearchFilter`. No chat completion model is required — embeddings alone are sufficient for semantic search.
 
 ## What It Demonstrates
 
@@ -9,7 +17,7 @@ A .NET 9 console app that indexes a corpus of items into an in-memory vector sto
 - **`VectorSearchFilter`** -- filter results by category field before scoring
 - **`IVectorSearchable<T>.SearchAsync`** -- top-k similarity search with optional filter
 - **Scored results** -- return similarity score alongside each result for ranking transparency
-- **Embedding-only app** -- no chat completion model needed (embedding + search is sufficient)
+- **Embedding-only app** -- no chat completion model needed
 
 ## Project Structure
 
@@ -30,7 +38,13 @@ ai-semantic-search/
 └── appsettings.Development.json     # Gitignored; holds your API key
 ```
 
-## Setup
+## Getting Started
+
+### Prerequisites
+- .NET 9 SDK
+- Azure OpenAI or OpenAI API access (embedding model only)
+
+### Setup
 
 Copy the example config:
 
@@ -38,7 +52,7 @@ Copy the example config:
 cp appsettings.Development.json.example appsettings.Development.json
 ```
 
-Fill in your embedding model credentials in `appsettings.Development.json`:
+Fill in your embedding model credentials:
 
 ```json
 {
@@ -53,7 +67,7 @@ Fill in your embedding model credentials in `appsettings.Development.json`:
 
 For standard OpenAI, set `"Type": "openai"` and omit `Endpoint`.
 
-## Running
+### Running the Project
 
 ```bash
 # Interactive search mode (default corpus)
@@ -88,3 +102,35 @@ The corpus is a JSON array of objects with these fields:
 ```
 
 Only `Id`, `Title`, and `Body` are required. `Category` enables filtered search with `--category`.
+
+## Newsletter
+
+If you found this useful and you want to learn more about C#, .NET, and software engineering, subscribe to the free Dev Leader Weekly newsletter:
+
+[Subscribe to Dev Leader Weekly](https://weekly.devleader.ca)
+
+## Connect with Dev Leader
+
+- [All Links](https://links.devleader.ca)
+- [Website - Dev Leader](https://www.devleader.ca)
+- [YouTube - Dev Leader](https://www.youtube.com/@DevLeader)
+- [YouTube - Dev Leader Path To Tech](https://www.youtube.com/@DevLeaderPathToTech)
+- [YouTube - Dev Leader Podcast](https://www.youtube.com/@DevLeaderPodcast)
+- [YouTube - CodeCommute](https://www.youtube.com/@CodeCommute)
+- [Newsletter - Dev Leader Weekly](https://weekly.devleader.ca)
+- [LinkedIn - Nick Cosentino](https://www.linkedin.com/in/nickcosentino/)
+- [GitHub - ncosentino](https://github.com/ncosentino/)
+- [Twitter/X - Dev Leader](https://twitter.com/DevLeaderCa)
+- [Threads - Dev Leader](https://www.threads.com/@dev.leader)
+- [Bluesky - Dev Leader](https://bsky.app/profile/devleader.ca)
+- [Mastodon - Dev Leader](https://hachyderm.io/@devleader)
+- [Facebook - Dev Leader](https://www.facebook.com/DevLeaderCa)
+- [TikTok - Dev Leader](https://www.tiktok.com/@devleader)
+- [Twitch - Dev Leader](https://www.twitch.tv/devleaderca)
+- [Stack Overflow - Nick Cosentino](https://stackoverflow.com/users/2704424)
+
+---
+
+[![BrandGhost](https://img.shields.io/badge/Powered%20by-BrandGhost-blueviolet?logo=ghost)](https://www.brandghost.ai)
+
+Powered by [BrandGhost](https://www.brandghost.ai) 👻

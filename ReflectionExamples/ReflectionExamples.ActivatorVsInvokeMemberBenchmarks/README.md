@@ -1,31 +1,45 @@
-# What Is This Example?
-This project contains benchmarking information for comparing different ways to instantiate objects using reflection. Consider checking out these articles and videos for more information on this topic:    
+# Activator.CreateInstance vs ConstructorInfo Benchmarks in C# – Reflection Performance
+
+[![YouTube](https://img.shields.io/badge/YouTube-Dev%20Leader-red?logo=youtube)](https://www.youtube.com/@devleader)
+[![Blog](https://img.shields.io/badge/Blog-devleader.ca-blue)](https://www.devleader.ca)
+[![Newsletter](https://img.shields.io/badge/Newsletter-subscribe-orange)](https://weekly.devleader.ca)
+[![All Links](https://img.shields.io/badge/All%20Links-links.devleader.ca-green)](https://links.devleader.ca)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Nick%20Cosentino-blue?logo=linkedin)](https://www.linkedin.com/in/nickcosentino/)
+
+This project contains benchmarking information for comparing different ways to instantiate objects using reflection. Consider checking out these articles and videos for more information on this topic:
+
 * [Activator.CreateInstance vs Type.InvokeMember – A Clear Winner?](https://www.devleader.ca/2024/03/14/activator-createinstance-vs-type-invokemember-a-clear-winner/)
 * [ConstructorInfo - How To Make Reflection in DotNet Faster for Instantiation](https://www.devleader.ca/2024/03/17/constructorinfo-how-to-make-reflection-in-dotnet-faster-for-instantiation/)
 * [The FAST Way To Create Instances With Reflection You're Not Using](https://www.youtube.com/watch?v=Djq7eMI_L-4)
 
-# More Dev Leader Content
-## 🔑 Membership & Subscriptions:
-- 📨 [Weekly Newsletter](https://subscribe.devleader.ca)
-- 🏘️ [Private Discord Community](https://discord.com/invite/TVY79BZ3Wy)
-- 📽️ [YouTube Membership](https://www.youtube.com/@devleader/join)    
+## Newsletter
 
-## 🧠 Courses:
-- [All Courses](https://www.devleader.ca/courses)
-- [Getting Started with C#](https://dometrain.com/course/getting-started-csharp?affcode=1115529_nl-teyzg)
-- [Deep Dive C#](https://dometrain.com/course/deep-dive-csharp?affcode=1115529_nl-teyzg)
-- [Refactoring For C# Devs](https://dometrain.com/course/from-zero-to-hero-refactoring-for-csharp-developers?affcode=1115529_nl-teyzg)
-- [FREE Intro to Software Development](https://www.youtube.com/playlist?list=PLzATctVhnsggb3lj53T8fJSK6LJQFUyKS)
+If you found this useful and you want to learn more about C#, .NET, and software engineering, subscribe to the free Dev Leader Weekly newsletter:
 
-## 🗣️ Social Media & Links:
-- [All My Links](https://links.devleader.ca)
-- [Blog](https://www.devleader.ca/)
-- [TikTok](https://www.tiktok.com/@devleader)
-- [LinkedIn](https://www.linkedin.com/in/nickcosentino)
-- [Threads](https://threads.net/@dev.leader)
-- [Twitter](https://twitter.com/DevLeaderCa)
-- [Facebook](https://www.facebook.com/DevLeaderCa)
-- [Instagram](https://www.instagram.com/dev.leader)
-- [GitHub](https://github.com/ncosentino/)
-- [Twitch](https://www.twitch.tv/ncosentino)
-- [YouTube](https://youtube.com/@DevLeader?sub_confirmation=1)
+[Subscribe to Dev Leader Weekly](https://weekly.devleader.ca)
+
+## Connect with Dev Leader
+
+- [All Links](https://links.devleader.ca)
+- [Website - Dev Leader](https://www.devleader.ca)
+- [YouTube - Dev Leader](https://www.youtube.com/@DevLeader)
+- [YouTube - Dev Leader Path To Tech](https://www.youtube.com/@DevLeaderPathToTech)
+- [YouTube - Dev Leader Podcast](https://www.youtube.com/@DevLeaderPodcast)
+- [YouTube - CodeCommute](https://www.youtube.com/@CodeCommute)
+- [Newsletter - Dev Leader Weekly](https://weekly.devleader.ca)
+- [LinkedIn - Nick Cosentino](https://www.linkedin.com/in/nickcosentino/)
+- [GitHub - ncosentino](https://github.com/ncosentino/)
+- [Twitter/X - Dev Leader](https://twitter.com/DevLeaderCa)
+- [Threads - Dev Leader](https://www.threads.com/@dev.leader)
+- [Bluesky - Dev Leader](https://bsky.app/profile/devleader.ca)
+- [Mastodon - Dev Leader](https://hachyderm.io/@devleader)
+- [Facebook - Dev Leader](https://www.facebook.com/DevLeaderCa)
+- [TikTok - Dev Leader](https://www.tiktok.com/@devleader)
+- [Twitch - Dev Leader](https://www.twitch.tv/devleaderca)
+- [Stack Overflow - Nick Cosentino](https://stackoverflow.com/users/2704424)
+
+---
+
+[![BrandGhost](https://img.shields.io/badge/Powered%20by-BrandGhost-blueviolet?logo=ghost)](https://www.brandghost.ai)
+
+Powered by [BrandGhost](https://www.brandghost.ai) 👻
