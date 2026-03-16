@@ -1,0 +1,54 @@
+# InstallerTutorial - Creating Windows MSI Installers with Visual Studio Setup Projects
+
+[![YouTube](https://img.shields.io/badge/YouTube-Dev%20Leader-red?logo=youtube)](https://www.youtube.com/@devleader)
+[![Blog](https://img.shields.io/badge/Blog-devleader.ca-blue)](https://www.devleader.ca)
+[![Newsletter](https://img.shields.io/badge/Newsletter-subscribe-orange)](https://weekly.devleader.ca)
+[![All Links](https://img.shields.io/badge/All%20Links-links.devleader.ca-green)](https://links.devleader.ca)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Nick%20Cosentino-blue?logo=linkedin)](https://www.linkedin.com/in/nickcosentino/)
+
+This project demonstrates how to create a Windows MSI installer package for a WPF desktop application using Visual Studio's Setup/Deployment Project system (`.vdproj`). The solution contains two projects: a simple WPF application targeting .NET 9.0-windows that builds as `CoolestApp.exe`, and a Visual Studio installer project that packages the application into an MSI file with a setup bootstrapper.
+
+The installer project is configured to automatically include the .NET Desktop Runtime 9.0.0 (x64) as a prerequisite, generating both an MSI installer file and a `setup.exe` bootstrapper that handles prerequisite installation. This tutorial provides a practical starting point for developers who need to create traditional Windows installers for .NET desktop applications.
+
+## Getting Started
+
+### Prerequisites
+- .NET 9.0 SDK or later
+- Visual Studio with the "Microsoft Visual Studio Installer Projects" extension
+
+### Running the Project
+1. Open `InstallerTutorial.sln` in Visual Studio
+2. Build the solution
+3. Find the generated installer in `InstallerTutorial.Installer\Debug\`
+
+## Newsletter
+
+If you found this useful and you want to learn more about C#, .NET, and software engineering, subscribe to the free Dev Leader Weekly newsletter:
+
+[Subscribe to Dev Leader Weekly](https://weekly.devleader.ca)
+
+## Connect with Dev Leader
+
+- [All Links](https://links.devleader.ca)
+- [Website - Dev Leader](https://www.devleader.ca)
+- [YouTube - Dev Leader](https://www.youtube.com/@DevLeader)
+- [YouTube - Dev Leader Path To Tech](https://www.youtube.com/@DevLeaderPathToTech)
+- [YouTube - Dev Leader Podcast](https://www.youtube.com/@DevLeaderPodcast)
+- [YouTube - CodeCommute](https://www.youtube.com/@CodeCommute)
+- [Newsletter - Dev Leader Weekly](https://weekly.devleader.ca)
+- [LinkedIn - Nick Cosentino](https://www.linkedin.com/in/nickcosentino/)
+- [GitHub - ncosentino](https://github.com/ncosentino/)
+- [Twitter/X - Dev Leader](https://twitter.com/DevLeaderCa)
+- [Threads - Dev Leader](https://www.threads.com/@dev.leader)
+- [Bluesky - Dev Leader](https://bsky.app/profile/devleader.ca)
+- [Mastodon - Dev Leader](https://hachyderm.io/@devleader)
+- [Facebook - Dev Leader](https://www.facebook.com/DevLeaderCa)
+- [TikTok - Dev Leader](https://www.tiktok.com/@devleader)
+- [Twitch - Dev Leader](https://www.twitch.tv/devleaderca)
+- [Stack Overflow - Nick Cosentino](https://stackoverflow.com/users/2704424)
+
+---
+
+[![BrandGhost](https://img.shields.io/badge/Powered%20by-BrandGhost-blueviolet?logo=ghost)](https://www.brandghost.ai)
+
+Powered by [BrandGhost](https://www.brandghost.ai) 👻
